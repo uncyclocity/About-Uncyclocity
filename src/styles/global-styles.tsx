@@ -12,13 +12,12 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 0;
-    overflow: hidden;
     font-family: NanumSquareR;
   }
 
   .outer {
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: hidden;
 
     &::webkit-scrollbar {
       display: none;
