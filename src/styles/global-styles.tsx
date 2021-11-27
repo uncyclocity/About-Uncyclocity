@@ -11,11 +11,18 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
     overflow: hidden;
     font-family: NanumSquareR;
+  }
+
+  .outer {
+    height: 100vh;
+    overflow-y: auto;
+
+    &::webkit-scrollbar {
+      display: none;
+    }
   }
 
   * {

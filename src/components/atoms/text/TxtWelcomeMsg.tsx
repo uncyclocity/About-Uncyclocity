@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import "../../../styles/font.css";
 import Typist from "react-text-typist";
+import React from "react";
 
 const NormalTextStyle = styled.div`
   font-family: NanumSquareL;
@@ -12,7 +13,7 @@ const StrongTextStyle = styled.div`
   font-family: NanumSquareB;
 `;
 
-export default function TxtWelcomeMsg() {
+function TxtWelcomeMsg() {
   return (
     <NormalTextStyle>
       <Typist
@@ -40,3 +41,5 @@ export default function TxtWelcomeMsg() {
     </NormalTextStyle>
   );
 }
+
+export default React.memo(TxtWelcomeMsg);
