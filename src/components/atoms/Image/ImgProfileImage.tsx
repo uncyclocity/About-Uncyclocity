@@ -10,7 +10,7 @@ type Image = {
 
 const Styles = styled.div`
   opacity: 0;
-  animation: 0.5s ease-in-out 1.5s ${FadeIn};
+  animation: 0.25s ease-in-out 0s ${FadeIn};
   animation-fill-mode: forwards;
 `;
 

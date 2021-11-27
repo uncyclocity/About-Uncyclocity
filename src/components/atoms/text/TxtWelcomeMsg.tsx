@@ -15,12 +15,17 @@ const StrongTextStyle = styled.div`
 export default function TxtWelcomeMsg() {
   return (
     <NormalTextStyle>
-      <Typist sentences={["프론트엔드"]} loop={false} showCursor={false} />
+      <Typist
+        sentences={["프론트엔드"]}
+        loop={false}
+        showCursor={false}
+        startDelay={500}
+      />
       <br />
       <Typist
         sentences={["개발자"]}
         loop={false}
-        startDelay={500}
+        startDelay={900}
         showCursor={false}
       />
       <br />
@@ -28,7 +33,7 @@ export default function TxtWelcomeMsg() {
         <Typist
           sentences={["이성범입니다 :)"]}
           loop={false}
-          startDelay={800}
+          startDelay={1200}
           showCursor={true}
         />
       </StrongTextStyle>
