@@ -1,15 +1,10 @@
-import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
-
-const Styles = styled.div`
-  font-size: 20px;
-  color: #808080;
-`;
+import BtnHeaderStyle from "./BtnHeaderStyle";
 
 export default function BtnHeaderGitHub() {
   return (
-    <Styles>
+    <BtnHeaderStyle>
       <BsGithub />
-    </Styles>
+    </BtnHeaderStyle>
   );
 }

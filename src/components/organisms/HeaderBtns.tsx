@@ -6,7 +6,7 @@ import BtnHeaderGitHub from "../atoms/button/BtnHeaderGitHub";
 const Styles = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: 120px;
 `;
 
 export default function HeaderBtns() {

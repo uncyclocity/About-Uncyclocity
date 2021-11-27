@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    ::selection {
+      background: #373737;
+      color: white;
+    }
   }
 `;
 

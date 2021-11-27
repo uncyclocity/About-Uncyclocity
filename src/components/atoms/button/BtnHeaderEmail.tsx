@@ -1,15 +1,10 @@
-import styled from "styled-components";
 import { AiTwotoneMail } from "react-icons/ai";
-
-const Styles = styled.div`
-  font-size: 20px;
-  color: #808080;
-`;
+import BtnHeaderStyle from "./BtnHeaderStyle";
 
 export default function BtnHeaderEmail() {
   return (
-    <Styles>
+    <BtnHeaderStyle>
       <AiTwotoneMail />
-    </Styles>
+    </BtnHeaderStyle>
   );
 }
