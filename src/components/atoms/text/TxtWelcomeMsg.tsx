@@ -19,13 +19,13 @@ export default function TxtWelcomeMsg() {
         sentences={["프론트엔드"]}
         loop={false}
         showCursor={false}
-        startDelay={500}
+        startDelay={300}
       />
       <br />
       <Typist
         sentences={["개발자"]}
         loop={false}
-        startDelay={900}
+        startDelay={800}
         showCursor={false}
       />
       <br />
@@ -33,7 +33,7 @@ export default function TxtWelcomeMsg() {
         <Typist
           sentences={["이성범입니다 :)"]}
           loop={false}
-          startDelay={1200}
+          startDelay={1100}
           showCursor={true}
         />
       </StrongTextStyle>
