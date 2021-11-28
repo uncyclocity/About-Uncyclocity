@@ -66,9 +66,17 @@ export default function App() {
       const { scrollTop }: any = outerDivRefCurrent;
       const pageHeight = window.innerHeight;
       if (deltaY > 0) {
-        pageChangeWorks(float2int(scrollTop / pageHeight) + 1, pageHeight);
+        let divided = float2int(scrollTop / pageHeight) + 1;
+        if (divided > 4) {
+          divided = 4;
+        }
+        pageChangeWorks(divided, pageHeight);
       } else {
-        pageChangeWorks(float2int(scrollTop / pageHeight) - 1, pageHeight);
+        let divided = float2int(scrollTop / pageHeight) - 1;
+        if (divided < 0) {
+          divided = 0;
+        }
+        pageChangeWorks(divided, pageHeight);
       }
     };
 
