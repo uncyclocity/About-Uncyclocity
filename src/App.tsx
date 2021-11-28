@@ -56,33 +56,22 @@ export default function App() {
       });
     };
 
+    const float2int = (val: number) => {
+      return val | 0;
+    };
+
     const wheelHandler = (e: any) => {
       e.preventDefault();
       const { deltaY } = e;
       const { scrollTop }: any = outerDivRefCurrent;
       const pageHeight = window.innerHeight;
       if (deltaY > 0) {
-        if (scrollTop < pageHeight) {
-          pageChangeWorks(1, pageHeight);
-        } else if (scrollTop < pageHeight * 2) {
-          pageChangeWorks(2, pageHeight);
-        } else if (scrollTop < pageHeight * 3) {
-          pageChangeWorks(3, pageHeight);
-        } else if (scrollTop < pageHeight * 4) {
-          pageChangeWorks(4, pageHeight);
-        }
+        pageChangeWorks(float2int(scrollTop / pageHeight) + 1, pageHeight);
       } else {
-        if (scrollTop <= pageHeight) {
-          pageChangeWorks(0, pageHeight);
-        } else if (scrollTop <= pageHeight * 2) {
-          pageChangeWorks(1, pageHeight);
-        } else if (scrollTop <= pageHeight * 3) {
-          pageChangeWorks(2, pageHeight);
-        } else if (scrollTop <= pageHeight * 4) {
-          pageChangeWorks(3, pageHeight);
-        }
+        pageChangeWorks(float2int(scrollTop / pageHeight) - 1, pageHeight);
       }
     };
+
     outerDivRefCurrent?.addEventListener("wheel", wheelHandler);
     return () => {
       outerDivRefCurrent?.removeEventListener("wheel", wheelHandler);
