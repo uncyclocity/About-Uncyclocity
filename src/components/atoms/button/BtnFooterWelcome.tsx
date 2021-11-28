@@ -1,5 +1,9 @@
 import BtnFooterStyle from "./BtnFooterStyle";
 
-export default function BtnFooterWelcome({ isStrong }: { isStrong: boolean }) {
-  return <BtnFooterStyle isStrong={isStrong}>WELCOME</BtnFooterStyle>;
+export default function BtnFooterWelcome({ isStrong }: { isStrong: number }) {
+  return (
+    <BtnFooterStyle isStrong={isStrong} pageNum={0}>
+      WELCOME
+    </BtnFooterStyle>
+  );
 }

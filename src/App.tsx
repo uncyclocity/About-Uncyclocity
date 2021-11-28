@@ -6,99 +6,41 @@ import TmplFooter from "./components/templates/TmplFooter";
 import TmplHeader from "./components/templates/TmplHeader";
 import { theme } from "./styles/theme";
 
-type IsStrong = {
-  welcome: boolean;
-  profile: boolean;
-  introduce: boolean;
-  skills: boolean;
-  works: boolean;
-};
-
-const initialIsStrong: IsStrong = {
-  welcome: true,
-  profile: false,
-  introduce: false,
-  skills: false,
-  works: false,
-};
-
-const isStrongKey: string[] = [
-  "welcome",
-  "profile",
-  "introduce",
-  "skills",
-  "works",
-];
-
 export default function App() {
-  const [isStrong, setIsStrong] = useState<IsStrong>(initialIsStrong);
+  const [isStrong, setIsStrong] = useState<number>(0);
   const outerDivRef = useRef<HTMLDivElement>(null);
+  let timer: NodeJS.Timeout;
 
-  const pageChange = () => {
-    const outerDivRefCurrent = outerDivRef.current;
-
-    const pageChangeWorks = (page: number, pageHeight: number): void => {
-      const allFalseIsStrong: IsStrong = {
-        welcome: false,
-        profile: false,
-        introduce: false,
-        skills: false,
-        works: false,
-      };
-      setIsStrong({
-        ...allFalseIsStrong,
-        [isStrongKey[page]]: true,
-      });
-      outerDivRefCurrent?.scrollTo({
-        top: pageHeight * page,
-        left: 0,
-        behavior: "smooth",
-      });
-    };
-
-    const float2int = (val: number) => {
-      return val | 0;
-    };
-
-    const wheelHandler = (e: any) => {
+  const pageChange = (e: any) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
       e.preventDefault();
       const { deltaY } = e;
-      const { scrollTop }: any = outerDivRefCurrent;
-      const pageHeight = window.innerHeight;
-      if (deltaY > 0) {
-        let divided = float2int(scrollTop / pageHeight) + 1;
-        if (divided > 4) {
-          divided = 4;
-        }
-        pageChangeWorks(divided, pageHeight);
-      } else {
-        let divided = float2int(scrollTop / pageHeight) - 1;
-        if (divided < 0) {
-          divided = 0;
-        }
-        pageChangeWorks(divided, pageHeight);
+      if (deltaY > 0 && isStrong < 4) {
+        setIsStrong(isStrong + 1);
+      } else if (deltaY < 0 && isStrong > 0) {
+        setIsStrong(isStrong - 1);
       }
-    };
-
-    outerDivRefCurrent?.addEventListener("wheel", wheelHandler);
-    return () => {
-      outerDivRefCurrent?.removeEventListener("wheel", wheelHandler);
-    };
+    }, 150);
   };
 
   useEffect(() => {
-    pageChange();
-  }, []);
+    const outerDivRefCurrent = outerDivRef.current;
+    outerDivRefCurrent?.addEventListener("wheel", pageChange);
+    return () => {
+      outerDivRefCurrent?.removeEventListener("wheel", pageChange);
+    };
+  });
 
   return (
     <ThemeProvider theme={theme}>
       <TmplHeader />
       <div ref={outerDivRef} className="outer">
-        <Welcome />
-        <ReadyNow />
-        <ReadyNow />
-        <ReadyNow />
-        <ReadyNow />
+        {isStrong === 0 && <Welcome />}
+        {isStrong === 1 && <ReadyNow />}
+        {isStrong === 2 && <ReadyNow />}
+        {isStrong === 3 && <ReadyNow />}
+        {isStrong === 4 && <ReadyNow />}
       </div>
       <TmplFooter isStrong={isStrong} />
     </ThemeProvider>

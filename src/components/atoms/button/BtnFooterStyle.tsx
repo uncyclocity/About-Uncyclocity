@@ -6,8 +6,14 @@ const BtnFooterStyle = styled.div`
   letter-spacing: 4px;
   cursor: pointer;
 
-  font-family: ${({ isStrong }: { isStrong: boolean }): string => {
-    return isStrong ? "NanumSquareB" : "NanumSquareL";
+  font-family: ${({
+    isStrong,
+    pageNum,
+  }: {
+    isStrong: number;
+    pageNum: number;
+  }): string => {
+    return isStrong === pageNum ? "NanumSquareB" : "NanumSquareL";
   }};
 `;
 
