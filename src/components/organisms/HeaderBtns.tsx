@@ -2,19 +2,40 @@ import styled from "styled-components";
 import BtnHeaderCall from "../atoms/button/BtnHeaderCall";
 import BtnHeaderEmail from "../atoms/button/BtnHeaderEmail";
 import BtnHeaderGitHub from "../atoms/button/BtnHeaderGitHub";
+import HeaderPopupCall from "../morecules/HeaderPopupCall";
+import HeaderPopupEmail from "../morecules/HeaderPopupEmail";
+import HeaderPopupGithubLink from "../morecules/HeaderPopupGithubLink";
 
-const Styles = styled.div`
+const LayoutStyle = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   width: 120px;
 `;
 
-export default function HeaderBtns() {
+const BtnsStyle = styled.div``;
+
+export default function HeaderBtns({
+  headerHover,
+  setHeaderHover,
+}: {
+  headerHover: HeaderHover;
+  setHeaderHover: (key: string, value: boolean) => void;
+}) {
   return (
-    <Styles>
-      <BtnHeaderGitHub />
-      <BtnHeaderCall />
-      <BtnHeaderEmail />
-    </Styles>
+    <LayoutStyle>
+      <BtnsStyle>
+        <BtnHeaderGitHub setHeaderHover={setHeaderHover} />
+        {headerHover.githubLink && <HeaderPopupGithubLink />}
+      </BtnsStyle>
+      <BtnsStyle>
+        <BtnHeaderCall setHeaderHover={setHeaderHover} />
+        {headerHover.call && <HeaderPopupCall />}
+      </BtnsStyle>
+      <BtnsStyle>
+        <BtnHeaderEmail setHeaderHover={setHeaderHover} />
+        {headerHover.email && <HeaderPopupEmail />}
+      </BtnsStyle>
+    </LayoutStyle>
   );
 }

@@ -3,11 +3,17 @@ import React, { createContext, Dispatch, useContext, useReducer } from "react";
 type State = {
   unmountAnimation: boolean;
   nowSlide: number;
+  headerHover: {
+    githubLink: boolean;
+    call: boolean;
+    email: boolean;
+  };
 };
 
 type Action =
   | { type: "SET_ANIMATION"; state: boolean }
-  | { type: "SET_NOWSLIDE"; state: number };
+  | { type: "SET_NOWSLIDE"; state: number }
+  | { type: "SET_HOVER"; key: string; value: boolean };
 
 type SampleDispatch = Dispatch<Action>;
 
@@ -26,6 +32,14 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         nowSlide: action.state,
       };
+    case "SET_HOVER":
+      return {
+        ...state,
+        headerHover: {
+          ...state.headerHover,
+          [action.key]: action.value,
+        },
+      };
     default:
       throw new Error("Unhandled Action");
   }
@@ -34,6 +48,11 @@ const reducer = (state: State, action: Action): State => {
 const initialState: State = {
   unmountAnimation: false,
   nowSlide: 0,
+  headerHover: {
+    githubLink: false,
+    call: false,
+    email: false,
+  },
 };
 
 export default function SampleProvider({

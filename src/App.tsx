@@ -12,7 +12,10 @@ import { theme } from "./styles/theme";
 
 export default function App() {
   const outerDivRef = useRef<HTMLDivElement>(null);
-  const { nowSlide } = useSampleState();
+  const {
+    nowSlide,
+    headerHover,
+  }: { nowSlide: number; headerHover: HeaderHover } = useSampleState();
   const dispatch = useSampleDispatch();
   const timer = useRef(setTimeout(() => {}, 0));
 
@@ -43,6 +46,10 @@ export default function App() {
     [nowSlide, pageChangeworks]
   );
 
+  const setHeaderHover = (key: string, value: boolean) => {
+    dispatch({ type: "SET_HOVER", key, value });
+  };
+
   useEffect(() => {
     const outerDivRefCurrent = outerDivRef.current;
     outerDivRefCurrent?.addEventListener("wheel", pageChange);
@@ -53,7 +60,6 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <TmplHeader />
       <div ref={outerDivRef} className="outer">
         {nowSlide === 0 && <Welcome />}
         {nowSlide === 1 && <ReadyNow />}
@@ -61,6 +67,7 @@ export default function App() {
         {nowSlide === 3 && <ReadyNow />}
         {nowSlide === 4 && <ReadyNow />}
       </div>
+      <TmplHeader headerHover={headerHover} setHeaderHover={setHeaderHover} />
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
     </ThemeProvider>
   );

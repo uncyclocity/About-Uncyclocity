@@ -13,10 +13,16 @@ const Styles = styled.div`
   justify-content: center;
 `;
 
-export default function TmplHeader() {
+export default function TmplHeader({
+  headerHover,
+  setHeaderHover,
+}: {
+  headerHover: HeaderHover;
+  setHeaderHover: (key: string, value: boolean) => void;
+}) {
   return (
     <Styles>
-      <HeaderBtns />
+      <HeaderBtns headerHover={headerHover} setHeaderHover={setHeaderHover} />
     </Styles>
   );
 }
