@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import SampleProvider from "./components/context/pageContext";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./styles/global-styles";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <SampleProvider>
+      <App />
+    </SampleProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

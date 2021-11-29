@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ThemeProvider } from "styled-components";
+import { useSampleDispatch } from "./components/context/pageContext";
 import ReadyNow from "./components/pages/ReadyNow";
 import Welcome from "./components/pages/Welcome";
 import TmplFooter from "./components/templates/TmplFooter";
@@ -9,6 +10,7 @@ import { theme } from "./styles/theme";
 export default function App() {
   const [isStrong, setIsStrong] = useState<number>(0);
   const outerDivRef = useRef<HTMLDivElement>(null);
+  const dispatch = useSampleDispatch();
   let timer: NodeJS.Timeout;
 
   const pageChange = (e: any) => {
@@ -17,11 +19,19 @@ export default function App() {
       e.preventDefault();
       const { deltaY } = e;
       if (deltaY > 0 && isStrong < 4) {
-        setIsStrong(isStrong + 1);
+        dispatch({ type: "SET_ANIMATION", state: true });
+        setTimeout(() => {
+          dispatch({ type: "SET_ANIMATION", state: false });
+          setIsStrong(isStrong + 1);
+        }, 250);
       } else if (deltaY < 0 && isStrong > 0) {
-        setIsStrong(isStrong - 1);
+        dispatch({ type: "SET_ANIMATION", state: true });
+        setTimeout(() => {
+          dispatch({ type: "SET_ANIMATION", state: false });
+          setIsStrong(isStrong - 1);
+        }, 250);
       }
-    }, 150);
+    }, 100);
   };
 
   useEffect(() => {
