@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { ThemeProvider } from "styled-components";
 import {
   useSampleDispatch,
@@ -14,28 +14,34 @@ export default function App() {
   const outerDivRef = useRef<HTMLDivElement>(null);
   const { nowSlide } = useSampleState();
   const dispatch = useSampleDispatch();
-  let timer: NodeJS.Timeout;
+  const timer = useRef(setTimeout(() => {}, 0));
 
-  const pageChange = (e: any) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      e.preventDefault();
-      const { deltaY } = e;
-      if (deltaY > 0 && nowSlide < 4) {
-        pageChangeworks(nowSlide + 1);
-      } else if (deltaY < 0 && nowSlide > 0) {
-        pageChangeworks(nowSlide - 1);
-      }
-    }, 100);
-  };
+  const pageChangeworks = useCallback(
+    (slideNum: number) => {
+      dispatch({ type: "SET_ANIMATION", state: true });
+      setTimeout(() => {
+        dispatch({ type: "SET_ANIMATION", state: false });
+        dispatch({ type: "SET_NOWSLIDE", state: slideNum });
+      }, 250);
+    },
+    [dispatch]
+  );
 
-  const pageChangeworks = (slideNum: number) => {
-    dispatch({ type: "SET_ANIMATION", state: true });
-    setTimeout(() => {
-      dispatch({ type: "SET_ANIMATION", state: false });
-      dispatch({ type: "SET_NOWSLIDE", state: slideNum });
-    }, 250);
-  };
+  const pageChange = useCallback(
+    (e: any) => {
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => {
+        e.preventDefault();
+        const { deltaY } = e;
+        if (deltaY > 0 && nowSlide < 4) {
+          pageChangeworks(nowSlide + 1);
+        } else if (deltaY < 0 && nowSlide > 0) {
+          pageChangeworks(nowSlide - 1);
+        }
+      }, 100);
+    },
+    [nowSlide, pageChangeworks]
+  );
 
   useEffect(() => {
     const outerDivRefCurrent = outerDivRef.current;
@@ -43,7 +49,7 @@ export default function App() {
     return () => {
       outerDivRefCurrent?.removeEventListener("wheel", pageChange);
     };
-  });
+  }, [pageChange]);
 
   return (
     <ThemeProvider theme={theme}>

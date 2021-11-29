@@ -4,7 +4,6 @@ import { SlideUp, SlideDown } from "../../styles/keyframes/slide";
 import { useSampleState } from "../context/pageContext";
 
 const Styles = styled.div`
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
