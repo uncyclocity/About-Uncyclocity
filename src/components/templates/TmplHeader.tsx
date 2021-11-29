@@ -16,13 +16,19 @@ const Styles = styled.div`
 export default function TmplHeader({
   headerHover,
   setHeaderHover,
+  headerClick,
 }: {
   headerHover: HeaderHover;
   setHeaderHover: (key: string, value: boolean) => void;
+  headerClick: HeaderClick;
 }) {
   return (
     <Styles>
-      <HeaderBtns headerHover={headerHover} setHeaderHover={setHeaderHover} />
+      <HeaderBtns
+        headerHover={headerHover}
+        setHeaderHover={setHeaderHover}
+        headerClick={headerClick}
+      />
     </Styles>
   );
 }

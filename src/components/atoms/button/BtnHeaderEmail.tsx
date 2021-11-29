@@ -3,8 +3,10 @@ import BtnHeaderStyle from "./BtnHeaderStyle";
 
 export default function BtnHeaderEmail({
   setHeaderHover,
+  onClick,
 }: {
   setHeaderHover: (key: string, value: boolean) => void;
+  onClick: () => void;
 }) {
   const btnKind = "email";
 
@@ -12,6 +14,7 @@ export default function BtnHeaderEmail({
     <BtnHeaderStyle
       onMouseEnter={() => setHeaderHover(btnKind, true)}
       onMouseLeave={() => setHeaderHover(btnKind, false)}
+      onClick={onClick}
     >
       <AiTwotoneMail />
     </BtnHeaderStyle>

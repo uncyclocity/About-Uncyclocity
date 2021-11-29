@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-const TxtHeaderPopupStyle = styled.div`
+export const TxtHeaderPopupStyle = styled.div`
   color: white;
   font-size: 17px;
 `;
 
-export default TxtHeaderPopupStyle;
+export const TxtHeaderPopupHintStyle = styled.div`
+  color: white;
+  font-size: 14px;
+`;

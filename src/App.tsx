@@ -50,6 +50,21 @@ export default function App() {
     dispatch({ type: "SET_HOVER", key, value });
   };
 
+  const headerClick: HeaderClick = {
+    githubLink: () => {
+      const githubUrl = "https://github.com/uncyclocity";
+      window.open(githubUrl, "_blank");
+    },
+    call: () => {
+      const phoneNum = "+82 10-2610-3861";
+      navigator.clipboard.writeText(phoneNum);
+    },
+    email: () => {
+      const emailUrl = "seongbeom_lee@kakao.com";
+      navigator.clipboard.writeText(emailUrl);
+    },
+  };
+
   useEffect(() => {
     const outerDivRefCurrent = outerDivRef.current;
     outerDivRefCurrent?.addEventListener("wheel", pageChange);
@@ -67,7 +82,11 @@ export default function App() {
         {nowSlide === 3 && <ReadyNow />}
         {nowSlide === 4 && <ReadyNow />}
       </div>
-      <TmplHeader headerHover={headerHover} setHeaderHover={setHeaderHover} />
+      <TmplHeader
+        headerHover={headerHover}
+        setHeaderHover={setHeaderHover}
+        headerClick={headerClick}
+      />
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
     </ThemeProvider>
   );

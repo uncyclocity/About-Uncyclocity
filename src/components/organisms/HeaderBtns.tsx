@@ -18,22 +18,33 @@ const BtnsStyle = styled.div``;
 export default function HeaderBtns({
   headerHover,
   setHeaderHover,
+  headerClick,
 }: {
   headerHover: HeaderHover;
   setHeaderHover: (key: string, value: boolean) => void;
+  headerClick: HeaderClick;
 }) {
   return (
     <LayoutStyle>
       <BtnsStyle>
-        <BtnHeaderGitHub setHeaderHover={setHeaderHover} />
+        <BtnHeaderGitHub
+          setHeaderHover={setHeaderHover}
+          onClick={headerClick.githubLink}
+        />
         {headerHover.githubLink && <HeaderPopupGithubLink />}
       </BtnsStyle>
       <BtnsStyle>
-        <BtnHeaderCall setHeaderHover={setHeaderHover} />
+        <BtnHeaderCall
+          setHeaderHover={setHeaderHover}
+          onClick={headerClick.call}
+        />
         {headerHover.call && <HeaderPopupCall />}
       </BtnsStyle>
       <BtnsStyle>
-        <BtnHeaderEmail setHeaderHover={setHeaderHover} />
+        <BtnHeaderEmail
+          setHeaderHover={setHeaderHover}
+          onClick={headerClick.email}
+        />
         {headerHover.email && <HeaderPopupEmail />}
       </BtnsStyle>
     </LayoutStyle>
