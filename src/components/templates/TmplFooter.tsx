@@ -13,10 +13,16 @@ const Styles = styled.div`
   justify-content: center;
 `;
 
-export default function TmplFooter({ isStrong }: { isStrong: number }) {
+export default function TmplFooter({
+  nowSlide,
+  onClick,
+}: {
+  nowSlide: number;
+  onClick: (slideNum: number) => void;
+}) {
   return (
     <Styles>
-      <FooterBtns isStrong={isStrong} />
+      <FooterBtns nowSlide={nowSlide} onClick={onClick} />
     </Styles>
   );
 }

@@ -2,9 +2,12 @@ import React, { createContext, Dispatch, useContext, useReducer } from "react";
 
 type State = {
   unmountAnimation: boolean;
+  nowSlide: number;
 };
 
-type Action = { type: "SET_ANIMATION"; state: boolean };
+type Action =
+  | { type: "SET_ANIMATION"; state: boolean }
+  | { type: "SET_NOWSLIDE"; state: number };
 
 type SampleDispatch = Dispatch<Action>;
 
@@ -18,6 +21,11 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         unmountAnimation: action.state,
       };
+    case "SET_NOWSLIDE":
+      return {
+        ...state,
+        nowSlide: action.state,
+      };
     default:
       throw new Error("Unhandled Action");
   }
@@ -25,6 +33,7 @@ const reducer = (state: State, action: Action): State => {
 
 const initialState: State = {
   unmountAnimation: false,
+  nowSlide: 0,
 };
 
 export default function SampleProvider({

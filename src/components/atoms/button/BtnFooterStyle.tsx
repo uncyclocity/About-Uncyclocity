@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 const BtnFooterStyle = styled.div`
-  font-size: 16px;
+  font-size: 17px;
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   cursor: pointer;
 
   font-family: ${({
-    isStrong,
+    nowSlide,
     pageNum,
   }: {
-    isStrong: number;
+    nowSlide: number;
     pageNum: number;
   }): string => {
-    return isStrong === pageNum ? "NanumSquareB" : "NanumSquareL";
+    return nowSlide === pageNum ? "NanumSquareB" : "NanumSquareL";
   }};
 `;
 

@@ -1,6 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { ThemeProvider } from "styled-components";
-import { useSampleDispatch } from "./components/context/pageContext";
+import {
+  useSampleDispatch,
+  useSampleState,
+} from "./components/context/pageContext";
 import ReadyNow from "./components/pages/ReadyNow";
 import Welcome from "./components/pages/Welcome";
 import TmplFooter from "./components/templates/TmplFooter";
@@ -8,8 +11,8 @@ import TmplHeader from "./components/templates/TmplHeader";
 import { theme } from "./styles/theme";
 
 export default function App() {
-  const [isStrong, setIsStrong] = useState<number>(0);
   const outerDivRef = useRef<HTMLDivElement>(null);
+  const { nowSlide } = useSampleState();
   const dispatch = useSampleDispatch();
   let timer: NodeJS.Timeout;
 
@@ -18,20 +21,20 @@ export default function App() {
     timer = setTimeout(() => {
       e.preventDefault();
       const { deltaY } = e;
-      if (deltaY > 0 && isStrong < 4) {
-        dispatch({ type: "SET_ANIMATION", state: true });
-        setTimeout(() => {
-          dispatch({ type: "SET_ANIMATION", state: false });
-          setIsStrong(isStrong + 1);
-        }, 250);
-      } else if (deltaY < 0 && isStrong > 0) {
-        dispatch({ type: "SET_ANIMATION", state: true });
-        setTimeout(() => {
-          dispatch({ type: "SET_ANIMATION", state: false });
-          setIsStrong(isStrong - 1);
-        }, 250);
+      if (deltaY > 0 && nowSlide < 4) {
+        pageChangeworks(nowSlide + 1);
+      } else if (deltaY < 0 && nowSlide > 0) {
+        pageChangeworks(nowSlide - 1);
       }
     }, 100);
+  };
+
+  const pageChangeworks = (slideNum: number) => {
+    dispatch({ type: "SET_ANIMATION", state: true });
+    setTimeout(() => {
+      dispatch({ type: "SET_ANIMATION", state: false });
+      dispatch({ type: "SET_NOWSLIDE", state: slideNum });
+    }, 250);
   };
 
   useEffect(() => {
@@ -46,13 +49,13 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <TmplHeader />
       <div ref={outerDivRef} className="outer">
-        {isStrong === 0 && <Welcome />}
-        {isStrong === 1 && <ReadyNow />}
-        {isStrong === 2 && <ReadyNow />}
-        {isStrong === 3 && <ReadyNow />}
-        {isStrong === 4 && <ReadyNow />}
+        {nowSlide === 0 && <Welcome />}
+        {nowSlide === 1 && <ReadyNow />}
+        {nowSlide === 2 && <ReadyNow />}
+        {nowSlide === 3 && <ReadyNow />}
+        {nowSlide === 4 && <ReadyNow />}
       </div>
-      <TmplFooter isStrong={isStrong} />
+      <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
     </ThemeProvider>
   );
 }

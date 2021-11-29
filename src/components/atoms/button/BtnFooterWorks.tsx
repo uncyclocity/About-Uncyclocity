@@ -1,8 +1,20 @@
 import BtnFooterStyle from "./BtnFooterStyle";
 
-export default function BtnFooterWorks({ isStrong }: { isStrong: number }) {
+export default function BtnFooterWorks({
+  nowSlide,
+  onClick,
+}: {
+  nowSlide: number;
+  onClick: (slideNum: number) => void;
+}) {
+  const pageNum = 4;
+
   return (
-    <BtnFooterStyle isStrong={isStrong} pageNum={4}>
+    <BtnFooterStyle
+      nowSlide={nowSlide}
+      pageNum={pageNum}
+      onClick={() => pageNum !== nowSlide && onClick(pageNum)}
+    >
       WORKS
     </BtnFooterStyle>
   );

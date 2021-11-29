@@ -8,17 +8,23 @@ import BtnFooterWorks from "../atoms/button/BtnFooterWorks";
 const Styles = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: 620px;
 `;
 
-export default function FooterBtns({ isStrong }: { isStrong: number }) {
+export default function FooterBtns({
+  nowSlide,
+  onClick,
+}: {
+  nowSlide: number;
+  onClick: (slideNum: number) => void;
+}) {
   return (
     <Styles>
-      <BtnFooterWelcome isStrong={isStrong} />
-      <BtnFooterProfile isStrong={isStrong} />
-      <BtnFooterIntroduce isStrong={isStrong} />
-      <BtnFooterSkills isStrong={isStrong} />
-      <BtnFooterWorks isStrong={isStrong} />
+      <BtnFooterWelcome nowSlide={nowSlide} onClick={onClick} />
+      <BtnFooterProfile nowSlide={nowSlide} onClick={onClick} />
+      <BtnFooterIntroduce nowSlide={nowSlide} onClick={onClick} />
+      <BtnFooterSkills nowSlide={nowSlide} onClick={onClick} />
+      <BtnFooterWorks nowSlide={nowSlide} onClick={onClick} />
     </Styles>
   );
 }
