@@ -11,7 +11,7 @@ export default function useSnackBar() {
     setViewText(viewText);
     timer.current = setTimeout(() => {
       setViewText("");
-    }, 3000);
+    }, 2200);
   }, [viewText]);
 
   return { viewText, setViewText };
