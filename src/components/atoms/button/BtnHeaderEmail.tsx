@@ -12,8 +12,14 @@ export default function BtnHeaderEmail({
 
   return (
     <BtnHeaderStyle
-      onMouseEnter={() => setHeaderHover(btnKind, true)}
-      onMouseLeave={() => setHeaderHover(btnKind, false)}
+      onMouseEnter={() =>
+        !matchMedia("screen and (max-width: 700px)").matches &&
+        setHeaderHover(btnKind, true)
+      }
+      onMouseLeave={() =>
+        !matchMedia("screen and (max-width: 700px)").matches &&
+        setHeaderHover(btnKind, false)
+      }
       onClick={onClick}
     >
       <AiTwotoneMail />
