@@ -73,6 +73,31 @@ export default function App() {
     },
   };
 
+  const headerClickMobile: HeaderClick = {
+    githubLink: () => {
+      const githubUrl = "https://github.com/uncyclocity";
+      window.open(githubUrl, "_blank");
+    },
+    call: (e: any) => {
+      const ref = e.target;
+      setHeaderHover("call", true);
+      ref.addEventListener("click", headerClick.call);
+      setTimeout(() => {
+        setHeaderHover("call", false);
+        ref.removeEventListener("click", headerClick.call);
+      }, 2000);
+    },
+    email: (e: any) => {
+      const ref = e.target;
+      setHeaderHover("email", true);
+      ref.addEventListener("click", headerClick.email);
+      setTimeout(() => {
+        setHeaderHover("email", false);
+        ref.removeEventListener("click", headerClick.email);
+      }, 2000);
+    },
+  };
+
   useEffect(() => {
     const outerDivRefCurrent = outerDivRef.current;
     outerDivRefCurrent?.addEventListener("wheel", pageChange);
@@ -95,6 +120,7 @@ export default function App() {
         headerHover={headerHover}
         setHeaderHover={setHeaderHover}
         headerClick={headerClick}
+        headerClickMobile={headerClickMobile}
       />
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
     </ThemeProvider>

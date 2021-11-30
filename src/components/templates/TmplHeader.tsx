@@ -21,10 +21,12 @@ export default function TmplHeader({
   headerHover,
   setHeaderHover,
   headerClick,
+  headerClickMobile,
 }: {
   headerHover: HeaderHover;
   setHeaderHover: (key: string, value: boolean) => void;
   headerClick: HeaderClick;
+  headerClickMobile: HeaderClick;
 }) {
   return (
     <Styles>
@@ -32,6 +34,7 @@ export default function TmplHeader({
         headerHover={headerHover}
         setHeaderHover={setHeaderHover}
         headerClick={headerClick}
+        headerClickMobile={headerClickMobile}
       />
     </Styles>
   );

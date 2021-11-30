@@ -23,10 +23,12 @@ export default function HeaderBtns({
   headerHover,
   setHeaderHover,
   headerClick,
+  headerClickMobile,
 }: {
   headerHover: HeaderHover;
   setHeaderHover: (key: string, value: boolean) => void;
   headerClick: HeaderClick;
+  headerClickMobile: HeaderClick;
 }) {
   return (
     <LayoutStyle>
@@ -38,17 +40,31 @@ export default function HeaderBtns({
         {headerHover.githubLink && <HeaderPopupGithubLink />}
       </BtnsStyle>
       <BtnsStyle>
-        <BtnHeaderCall
-          setHeaderHover={setHeaderHover}
-          onClick={headerClick.call}
-        />
+        {matchMedia("screen and (max-width: 700px)").matches ? (
+          <BtnHeaderCall
+            setHeaderHover={setHeaderHover}
+            onClick={headerClickMobile.call}
+          />
+        ) : (
+          <BtnHeaderCall
+            setHeaderHover={setHeaderHover}
+            onClick={headerClick.call}
+          />
+        )}
         {headerHover.call && <HeaderPopupCall />}
       </BtnsStyle>
       <BtnsStyle>
-        <BtnHeaderEmail
-          setHeaderHover={setHeaderHover}
-          onClick={headerClick.email}
-        />
+        {matchMedia("screen and (max-width: 700px)").matches ? (
+          <BtnHeaderEmail
+            setHeaderHover={setHeaderHover}
+            onClick={headerClickMobile.email}
+          />
+        ) : (
+          <BtnHeaderEmail
+            setHeaderHover={setHeaderHover}
+            onClick={headerClick.email}
+          />
+        )}
         {headerHover.email && <HeaderPopupEmail />}
       </BtnsStyle>
     </LayoutStyle>
