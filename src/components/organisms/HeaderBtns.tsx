@@ -11,6 +11,10 @@ const LayoutStyle = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   width: 120px;
+
+  @media screen and (max-width: 700px) {
+    width: 90px;
+  }
 `;
 
 const BtnsStyle = styled.div``;

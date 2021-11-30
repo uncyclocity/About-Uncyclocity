@@ -17,7 +17,7 @@ const Styles = styled.div`
 export default function ImgProfileImage() {
   const image: Image = {
     src: "https://media.discordapp.net/attachments/820998088889073685/913400010849267733/F10D031A-6EBF-440D-ACE7-C54A53E19F9F.jpg",
-    width: 100,
+    width: matchMedia("screen and (min-width: 700px") ? 70 : 100,
     alt: "프로필 사진",
   };
 

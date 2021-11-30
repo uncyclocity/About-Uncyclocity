@@ -11,6 +11,10 @@ const Styles = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 700px) {
+    height: 70px;
+  }
 `;
 
 export default function TmplHeader({

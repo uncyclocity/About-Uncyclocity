@@ -3,8 +3,16 @@ import styled from "styled-components";
 const Styles = styled.div`
   font-size: 18px;
   color: #808080;
+
+  @media screen and (max-width: 700px) {
+    font-size: 14px;
+  }
 `;
 
 export default function TxtWelcomeScrollHint() {
-  return <Styles>스크롤을 통해 페이지를 넘겨 보세요 ;)</Styles>;
+  if (!matchMedia("screen and (min-width: 700px")) {
+    return <Styles>스크롤을 통해 페이지를 넘겨 보세요 ;)</Styles>;
+  } else {
+    return <Styles>아래 버튼으로 페이지를 넘겨 보세요 ;)</Styles>;
+  }
 }

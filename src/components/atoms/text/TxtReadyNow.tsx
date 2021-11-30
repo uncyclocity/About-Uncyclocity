@@ -4,6 +4,9 @@ const NormalTxtStyle = styled.div`
   display: flex;
   font-size: 60px;
   font-family: NanumSquareL;
+  @media screen and (max-width: 700px) {
+    font-size: 35px;
+  }
 `;
 
 const StrongTxtStyle = styled.div`

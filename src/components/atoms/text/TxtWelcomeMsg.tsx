@@ -7,6 +7,10 @@ const NormalTextStyle = styled.div`
   font-family: NanumSquareL;
   font-size: 60px;
   color: #404040;
+
+  @media screen and (max-width: 700px) {
+    font-size: 40px;
+  }
 `;
 
 const StrongTextStyle = styled.div`

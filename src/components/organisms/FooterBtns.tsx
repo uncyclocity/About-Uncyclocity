@@ -9,6 +9,10 @@ const Styles = styled.div`
   display: flex;
   justify-content: space-between;
   width: 620px;
+
+  @media screen and (max-width: 700px) {
+    width: 90%;
+  }
 `;
 
 export default function FooterBtns({
