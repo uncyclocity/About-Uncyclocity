@@ -7,7 +7,7 @@ const Styles = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   opacity: 0;
   animation: 0.25s ease-in-out 2s ${FadeIn};
   animation-fill-mode: forwards;
