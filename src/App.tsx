@@ -4,6 +4,8 @@ import {
   useSampleDispatch,
   useSampleState,
 } from "./components/context/pageContext";
+import useSnackBar from "./components/etc/useSnackBar";
+import SnackBar from "./components/organisms/SnackBar";
 import ReadyNow from "./components/pages/ReadyNow";
 import Welcome from "./components/pages/Welcome";
 import TmplFooter from "./components/templates/TmplFooter";
@@ -18,6 +20,10 @@ export default function App() {
   }: { nowSlide: number; headerHover: HeaderHover } = useSampleState();
   const dispatch = useSampleDispatch();
   const timer = useRef(setTimeout(() => {}, 0));
+  const {
+    viewText,
+    setViewText,
+  }: { viewText: string; setViewText: (text: string) => void } = useSnackBar();
 
   const pageChangeworks = useCallback(
     (slideNum: number) => {
@@ -58,10 +64,12 @@ export default function App() {
     call: () => {
       const phoneNum = "+82 10-2610-3861";
       navigator.clipboard.writeText(phoneNum);
+      setViewText("클립보드에 복사되었습니다.");
     },
     email: () => {
       const emailUrl = "seongbeom_lee@kakao.com";
       navigator.clipboard.writeText(emailUrl);
+      setViewText("클립보드에 복사되었습니다.");
     },
   };
 
@@ -81,6 +89,7 @@ export default function App() {
         {nowSlide === 2 && <ReadyNow />}
         {nowSlide === 3 && <ReadyNow />}
         {nowSlide === 4 && <ReadyNow />}
+        {viewText && <SnackBar text={viewText} />}
       </div>
       <TmplHeader
         headerHover={headerHover}
