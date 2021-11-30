@@ -74,9 +74,14 @@ export default function App() {
   };
 
   const headerClickMobile: HeaderClick = {
-    githubLink: () => {
-      const githubUrl = "https://github.com/uncyclocity";
-      window.open(githubUrl, "_blank");
+    githubLink: (e) => {
+      const ref = e.target;
+      setHeaderHover("githubLink", true);
+      ref.addEventListener("click", headerClick.githubLink);
+      setTimeout(() => {
+        setHeaderHover("githubLink", false);
+        ref.removeEventListener("click", headerClick.githubLink);
+      }, 2000);
     },
     call: (e: any) => {
       const ref = e.target;

@@ -33,10 +33,17 @@ export default function HeaderBtns({
   return (
     <LayoutStyle>
       <BtnsStyle>
-        <BtnHeaderGitHub
-          setHeaderHover={setHeaderHover}
-          onClick={headerClick.githubLink}
-        />
+        {matchMedia("screen and (max-width: 700px)").matches ? (
+          <BtnHeaderGitHub
+            setHeaderHover={setHeaderHover}
+            onClick={headerClickMobile.githubLink}
+          />
+        ) : (
+          <BtnHeaderGitHub
+            setHeaderHover={setHeaderHover}
+            onClick={headerClick.githubLink}
+          />
+        )}
         {headerHover.githubLink && <HeaderPopupGithubLink />}
       </BtnsStyle>
       <BtnsStyle>

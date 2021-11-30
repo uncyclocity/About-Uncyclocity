@@ -9,7 +9,7 @@ type HeaderHover = {
 
 // 헤더 3버튼 클릭 시 작업
 type HeaderClick = {
-  githubLink: () => void;
+  githubLink: (e?: any) => void;
   call: (e?: any) => void;
   email: (e?: any) => void;
 };
