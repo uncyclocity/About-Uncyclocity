@@ -3,8 +3,15 @@ import TxtProfileInfo from "../atoms/text/TxtProfileInfo";
 
 const Styles = styled.div`
   * {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 700px) {
+    * {
+      margin-top: 2.5px;
+      margin-bottom: 2.5px;
+    }
   }
 `;
 

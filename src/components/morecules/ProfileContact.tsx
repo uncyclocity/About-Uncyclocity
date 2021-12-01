@@ -6,7 +6,7 @@ import TxtProfileContact from "../atoms/text/TxtProfileContact";
 
 const LayoutStyle = styled.div`
   width: 620px;
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,6 +14,8 @@ const LayoutStyle = styled.div`
   @media screen and (max-width: 700px) {
     flex-direction: column;
     margin-left: 0px;
+    margin: 5px 0;
+    width: 100%;
   }
 `;
 

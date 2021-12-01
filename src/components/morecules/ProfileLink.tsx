@@ -4,12 +4,12 @@ import BtnProfileVelog from "../atoms/button/BtnProfileVelog";
 
 const LayoutStyle = styled.div`
   display: flex;
-  width: 360px;
-  margin: 10px 0;
+  width: 380px;
+  margin: 20px 0;
   justify-content: space-between;
   @media screen and (max-width: 700px) {
     width: 280px;
-    margin: 0px;
+    margin: 5px 0;
   }
 `;
 

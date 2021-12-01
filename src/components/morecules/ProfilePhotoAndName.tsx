@@ -8,7 +8,7 @@ const Styles = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding-right: 20px;
+  padding-right: 50px;
 
   border-right: 1px solid #b0b0b0;
 

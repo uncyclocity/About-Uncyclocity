@@ -17,12 +17,13 @@ const InfosStyle = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 50px;
   width: 700px;
 
   @media screen and (max-width: 700px) {
     align-items: center;
     margin-left: 0px;
+    width: 100%;
   }
 `;
 
