@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FadeIn } from "../../styles/keyframes/fade";
 import ImgProfileImage from "../atoms/Image/ImgProfileImage";
 import TxtWelcomeMsg from "../atoms/text/TxtWelcomeMsg";
 import WelcomeScrollHint from "../morecules/WelcomeScrollHint";
@@ -8,8 +9,18 @@ const Styles = styled.div`
   height: 320px;
   margin-bottom: 100px;
 
+  img {
+    width: 100px;
+    opacity: 0;
+    animation: 1s ease-in-out 0s ${FadeIn};
+    animation-fill-mode: forwards;
+  }
+
   @media screen and (max-width: 700px) {
     width: 268px;
+    img {
+      width: 60px;
+    }
   }
 `;
 

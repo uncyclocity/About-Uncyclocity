@@ -6,6 +6,7 @@ import {
 } from "./components/context/pageContext";
 import useSnackBar from "./components/etc/useSnackBar";
 import SnackBar from "./components/organisms/SnackBar";
+import Profile from "./components/pages/Profile";
 import ReadyNow from "./components/pages/ReadyNow";
 import Welcome from "./components/pages/Welcome";
 import TmplFooter from "./components/templates/TmplFooter";
@@ -115,7 +116,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div ref={outerDivRef} className="outer">
         {nowSlide === 0 && <Welcome />}
-        {nowSlide === 1 && <ReadyNow />}
+        {nowSlide === 1 && <Profile />}
         {nowSlide === 2 && <ReadyNow />}
         {nowSlide === 3 && <ReadyNow />}
         {nowSlide === 4 && <ReadyNow />}

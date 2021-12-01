@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: NanumSquareR;
+    color: #404040;
   }
 
   .outer {

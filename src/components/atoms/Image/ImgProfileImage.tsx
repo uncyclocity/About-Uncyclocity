@@ -1,25 +1,7 @@
-import styled from "styled-components";
-import { FadeIn } from "../../../styles/keyframes/fade";
-
 type Image = {
   src: string;
   alt: string;
 };
-
-const Styles = styled.div`
-  opacity: 0;
-  animation: 1s ease-in-out 0s ${FadeIn};
-  animation-fill-mode: forwards;
-  img {
-    width: 100px;
-  }
-
-  @media screen and (max-width: 700px) {
-    img {
-      width: 60px;
-    }
-  }
-`;
 
 export default function ImgProfileImage() {
   const image: Image = {
@@ -27,9 +9,5 @@ export default function ImgProfileImage() {
     alt: "프로필 사진",
   };
 
-  return (
-    <Styles>
-      <img src={image.src} alt={image.alt} />
-    </Styles>
-  );
+  return <img src={image.src} alt={image.alt} />;
 }
