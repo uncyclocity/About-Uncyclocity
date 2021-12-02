@@ -5,7 +5,8 @@ const Styles = styled.div`
   height: 394px;
 
   @media screen and (max-width: 700px) {
-    height: 130px;
+    height: auto;
+    margin-bottom: 10px;
   }
 `;
 
