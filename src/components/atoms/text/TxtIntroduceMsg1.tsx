@@ -10,13 +10,18 @@ const NormalTextStyle = styled.div`
   font-size: 35px;
   width: 380px;
 
-  @media screen and (max-width: 700px) {
-    font-size: 20px;
-  }
-
   * {
     margin-left: auto;
     margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 20px;
+
+    * {
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
   }
 `;
 

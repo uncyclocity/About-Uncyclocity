@@ -6,6 +6,11 @@ const NormalTextStyle = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 22px;
+
+  @media screen and (max-width: 700px) {
+    font-size: 14px;
+    align-items: center;
+  }
 `;
 
 function TxtIntroduceMsg1() {
@@ -26,7 +31,7 @@ function TxtIntroduceMsg1() {
       <NormalTextStyle>저는 이전부터 React에 큰 관심이 생겨</NormalTextStyle>
       <NormalTextStyle>꾸준히 학습하고 이를 정리해왔습니다.</NormalTextStyle>
       <NormalTextStyle>
-        그리고 학습 내용을 바탕으로 다양한 프로젝트를 진행해왔습니다.
+        또한 학습 내용을 바탕으로 다양한 프로젝트를 진행해왔습니다.
       </NormalTextStyle>
       <br />
       <NormalTextStyle>이제는 그동안 애정으로 다뤄 온 React로</NormalTextStyle>

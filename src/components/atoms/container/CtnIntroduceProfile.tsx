@@ -7,6 +7,12 @@ const Styles = styled.div`
   background-size: 220px;
   padding: 7px 15.5px;
   width: 220px;
+
+  @media screen and (max-width: 700px) {
+    margin: 0 auto;
+    background-size: 170px;
+    width: 170px;
+  }
 `;
 
 export default function CtnIntroduceProfile({

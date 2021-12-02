@@ -5,6 +5,10 @@ import TxtIntroduceNameAndNickname from "../atoms/text/TxtIntroduceNameAndNickna
 
 const OuterStyle = styled.div`
   margin-bottom: 30px;
+
+  @media screen and (max-width: 700px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const InnerStyle = styled.div`
@@ -13,6 +17,12 @@ const InnerStyle = styled.div`
   align-items: center;
   img {
     width: 80px;
+  }
+
+  @media screen and (max-width: 700px) {
+    img {
+      width: 59px;
+    }
   }
 `;
 

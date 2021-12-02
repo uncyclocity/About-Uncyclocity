@@ -11,15 +11,27 @@ const LayoutStyle = styled.div`
 const NameStyle = styled.div`
   font-family: NanumSquareB;
   font-size: 25px;
+
+  @media screen and (max-width: 700px) {
+    font-size: 18px;
+  }
 `;
 
 const NicknameStyle = styled.div`
   font-size: 20px;
+
+  @media screen and (max-width: 700px) {
+    font-size: 15px;
+  }
 `;
 
 const EngNicknameStyle = styled.div`
   font-size: 18px;
   color: #808080;
+
+  @media screen and (max-width: 700px) {
+    font-size: 12px;
+  }
 `;
 
 export default function TxtIntroduceNameAndNickname() {
