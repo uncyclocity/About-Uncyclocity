@@ -5,7 +5,7 @@ const LayoutStyle = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
 
   &:hover {

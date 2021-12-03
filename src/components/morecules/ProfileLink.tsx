@@ -4,7 +4,7 @@ import BtnProfileVelog from "../atoms/button/BtnProfileVelog";
 
 const LayoutStyle = styled.div`
   display: flex;
-  width: 380px;
+  width: 385px;
   margin: 20px 0;
   justify-content: space-between;
   @media screen and (max-width: 700px) {

@@ -1,6 +1,9 @@
-import { IoLogoJavascript } from "react-icons/io";
-import { IoLogoReact } from "react-icons/io5";
-import { SiNextdotjs, SiStyledcomponents } from "react-icons/si";
+import {
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiStyledcomponents,
+} from "react-icons/si";
 import IcoSkillsSkill from "../atoms/icon/IcoSkillsSkill";
 import TxtSkillsStrong from "../atoms/text/TxtSkillsStrong";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
@@ -12,13 +15,13 @@ export default function SkillsStrongs() {
       <IcoLinesStyle>
         <IcoStyle>
           <IcoSkillsSkill
-            icon={<IoLogoJavascript />}
+            icon={<SiJavascript />}
             text="JavaScript"
             bgColor="#F7DF1E"
             txtColor="black"
           />
           <IcoSkillsSkill
-            icon={<IoLogoReact />}
+            icon={<SiReact />}
             text="React"
             bgColor="#61DAFB"
             txtColor="black"
