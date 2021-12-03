@@ -12,6 +12,12 @@ const Styles = styled.div`
     margin: 0 10px;
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 700px) {
+    img {
+      height: 150px;
+    }
+  }
 `;
 
 export default function WorksForestiaScreenShot() {

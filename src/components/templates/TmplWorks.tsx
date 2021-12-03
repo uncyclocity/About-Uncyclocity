@@ -6,6 +6,13 @@ const Styles = styled.div`
   width: 1150px;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 700px) {
+    width: 100vw;
+    & > div {
+      margin: 0 10px;
+    }
+  }
 `;
 
 export default function TmplWorks({

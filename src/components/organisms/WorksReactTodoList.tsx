@@ -15,6 +15,10 @@ const LayoutStyles = styled.div`
   & > div {
     margin: 15px 0;
   }
+  @media screen and (max-width: 700px) {
+    width: 355px;
+    height: 500px;
+  }
 `;
 
 export default function WorksReactTodoList({

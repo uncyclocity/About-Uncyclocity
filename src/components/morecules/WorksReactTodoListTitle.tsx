@@ -10,6 +10,13 @@ const Styles = styled.div`
   img {
     height: 59px;
   }
+
+  @media screen and (max-width: 700px) {
+    font-size: 18px;
+    img {
+      height: 40px;
+    }
+  }
 `;
 
 export default function WorksReactTodoListTitle() {
