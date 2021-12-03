@@ -9,6 +9,7 @@ import SnackBar from "./components/organisms/SnackBar";
 import Introduce from "./components/pages/Introduce";
 import Profile from "./components/pages/Profile";
 import ReadyNow from "./components/pages/ReadyNow";
+import Skills from "./components/pages/Skills";
 import Welcome from "./components/pages/Welcome";
 import TmplFooter from "./components/templates/TmplFooter";
 import TmplHeader from "./components/templates/TmplHeader";
@@ -119,7 +120,7 @@ export default function App() {
         {nowSlide === 0 && <Welcome />}
         {nowSlide === 1 && <Profile />}
         {nowSlide === 2 && <Introduce />}
-        {nowSlide === 3 && <ReadyNow />}
+        {nowSlide === 3 && <Skills />}
         {nowSlide === 4 && <ReadyNow />}
         {viewText && <SnackBar text={viewText} />}
       </div>
