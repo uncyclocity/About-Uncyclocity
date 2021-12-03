@@ -17,7 +17,10 @@ const LayoutStyles = styled.div`
   }
   @media screen and (max-width: 700px) {
     width: 355px;
-    height: 500px;
+    height: 480px;
+    & > div {
+      margin: 10px 0;
+    }
   }
 `;
 
