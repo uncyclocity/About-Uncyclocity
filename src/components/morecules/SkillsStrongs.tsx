@@ -4,7 +4,7 @@ import {
   SiNextdotjs,
   SiStyledcomponents,
 } from "react-icons/si";
-import IcoSkillsSkill from "../atoms/icon/IcoSkillsSkill";
+import IcoBadge from "../atoms/icon/IcoBadge";
 import TxtSkillsStrong from "../atoms/text/TxtSkillsStrong";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
@@ -14,13 +14,13 @@ export default function SkillsStrongs() {
       <TxtSkillsStrong />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiJavascript />}
             text="JavaScript"
             bgColor="#F7DF1E"
             txtColor="black"
           />
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiReact />}
             text="React"
             bgColor="#61DAFB"
@@ -28,13 +28,13 @@ export default function SkillsStrongs() {
           />
         </IcoStyle>
         <IcoStyle>
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiNextdotjs />}
             text="Next.js"
             bgColor="#000000"
             txtColor="white"
           />
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiStyledcomponents />}
             text="Styled-Components"
             bgColor="#DB7093"

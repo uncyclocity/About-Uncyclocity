@@ -13,3 +13,9 @@ type HeaderClick = {
   call: (e?: any) => void;
   email: (e?: any) => void;
 };
+
+// 작품 페이지에서 각 작품의 깃허브 링크
+type GitHubLink = {
+  gotoFrontRepo: () => void;
+  gotoBackRepo: () => void;
+};

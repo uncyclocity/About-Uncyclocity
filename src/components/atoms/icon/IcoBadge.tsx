@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const LayoutStyle = styled.div<{ bgColor: string; txtColor: string }>`
   display: flex;
-  height: 40px;
   align-items: center;
   padding: 5px 10px;
   border-radius: 5px;
   background: ${(props: any) => props.bgColor};
   color: ${(props: any) => props.txtColor};
+  height: 35px;
 
   @media screen and (max-width: 700px) {
     padding: 4px 5px;
@@ -18,8 +18,8 @@ const LayoutStyle = styled.div<{ bgColor: string; txtColor: string }>`
 `;
 
 const IconStyle = styled.div`
-  font-size: 30px;
-  height: 30px;
+  font-size: 25px;
+  height: 25px;
 
   @media screen and (max-width: 700px) {
     font-size: 15px;
@@ -28,7 +28,7 @@ const IconStyle = styled.div`
 `;
 
 const TextStyle = styled.div`
-  font-size: 20px;
+  font-size: 17px;
   margin-left: 10px;
   font-family: NanumSquareB;
 
@@ -38,7 +38,7 @@ const TextStyle = styled.div`
   }
 `;
 
-export default function IcoSkillsSkill({
+export default function IcoBadge({
   icon,
   text,
   bgColor,

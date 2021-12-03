@@ -8,9 +8,9 @@ import useSnackBar from "./components/etc/useSnackBar";
 import SnackBar from "./components/organisms/SnackBar";
 import Introduce from "./components/pages/Introduce";
 import Profile from "./components/pages/Profile";
-import ReadyNow from "./components/pages/ReadyNow";
 import Skills from "./components/pages/Skills";
 import Welcome from "./components/pages/Welcome";
+import Works from "./components/pages/Works";
 import TmplFooter from "./components/templates/TmplFooter";
 import TmplHeader from "./components/templates/TmplHeader";
 import { theme } from "./styles/theme";
@@ -127,7 +127,7 @@ export default function App() {
         {nowSlide === 1 && <Profile />}
         {nowSlide === 2 && <Introduce />}
         {nowSlide === 3 && <Skills />}
-        {nowSlide === 4 && <ReadyNow />}
+        {nowSlide === 4 && <Works />}
         {viewText && <SnackBar text={viewText} />}
       </div>
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />

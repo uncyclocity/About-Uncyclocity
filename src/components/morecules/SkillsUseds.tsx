@@ -1,5 +1,5 @@
 import { SiAndroidstudio, SiFirebase, SiMysql } from "react-icons/si";
-import IcoSkillsSkill from "../atoms/icon/IcoSkillsSkill";
+import IcoBadge from "../atoms/icon/IcoBadge";
 import TxtSkillsUsed from "../atoms/text/TxtSkillsUsed";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
@@ -9,13 +9,13 @@ export default function SkillsUseds() {
       <TxtSkillsUsed />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiAndroidstudio />}
             text="Android Studio"
             bgColor="#3DDC84"
             txtColor="black"
           />
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiFirebase />}
             text="Firebase"
             bgColor="#FFCA28"
@@ -23,7 +23,7 @@ export default function SkillsUseds() {
           />
         </IcoStyle>
         <IcoStyle>
-          <IcoSkillsSkill
+          <IcoBadge
             icon={<SiMysql />}
             text="MySQL"
             bgColor="#4479A1"
