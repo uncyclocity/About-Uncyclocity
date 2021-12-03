@@ -116,6 +116,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <TmplHeader
+        headerHover={headerHover}
+        setHeaderHover={setHeaderHover}
+        headerClick={headerClick}
+        headerClickMobile={headerClickMobile}
+      />
       <div ref={outerDivRef} className="outer">
         {nowSlide === 0 && <Welcome />}
         {nowSlide === 1 && <Profile />}
@@ -124,12 +130,6 @@ export default function App() {
         {nowSlide === 4 && <ReadyNow />}
         {viewText && <SnackBar text={viewText} />}
       </div>
-      <TmplHeader
-        headerHover={headerHover}
-        setHeaderHover={setHeaderHover}
-        headerClick={headerClick}
-        headerClickMobile={headerClickMobile}
-      />
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
     </ThemeProvider>
   );

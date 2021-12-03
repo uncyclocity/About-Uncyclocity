@@ -4,20 +4,17 @@ import { normalize } from "styled-normalize";
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
-  html {
-    width: 100%;
-    height: 100vh;
-  }
-
   html,
   body {
+    width: 100%;
+    height: 100vh;
     margin: 0;
     font-family: NanumSquareR;
     color: #404040;
   }
 
   .outer {
-    height: 100vh;
+    height: 80vh;
     overflow-y: hidden;
     display: flex;
     align-items: center;
