@@ -1,28 +1,9 @@
-import styled from "styled-components";
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
 import WorksForestiaGitHubLinks from "../molecules/WorksForestiaGitHubLinks";
 import WorksForestiaScreenShot from "../molecules/WorksForestiaScreenShot";
 import WorksForestiaTitle from "../molecules/WorksForestiaTitle";
-
-const LayoutStyles = styled.div`
-  width: 550px;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & > div {
-    margin: 15px 0;
-  }
-  @media screen and (max-width: 700px) {
-    width: 355px;
-    height: 480px;
-    & > div {
-      margin: 10px 0;
-    }
-  }
-`;
+import WorksStyle from "./WorksStyle";
 
 export default function WorksForestia({
   gitHubLink,
@@ -31,7 +12,7 @@ export default function WorksForestia({
 }) {
   return (
     <CtnWorks>
-      <LayoutStyles>
+      <WorksStyle>
         <WorksForestiaTitle />
         <WorksForestiaScreenShot />
         <TxtWorksDescription>
@@ -49,7 +30,7 @@ export default function WorksForestia({
           커뮤 활동이 가능합니다.
         </TxtWorksDescription>
         <WorksForestiaGitHubLinks gitHubLink={gitHubLink} />
-      </LayoutStyles>
+      </WorksStyle>
     </CtnWorks>
   );
 }

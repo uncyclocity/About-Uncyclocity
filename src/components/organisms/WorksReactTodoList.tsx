@@ -1,28 +1,9 @@
-import styled from "styled-components";
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
 import WorksReactTodoListGitHubLinks from "../molecules/WorksReactTodoListGitHubLinks";
 import WorksReactTodoListScreenShot from "../molecules/WorksReactTodoListScreenShot";
 import WorksReactTodoListTitle from "../molecules/WorksReactTodoListTitle";
-
-const LayoutStyles = styled.div`
-  width: 550px;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & > div {
-    margin: 15px 0;
-  }
-  @media screen and (max-width: 700px) {
-    width: 355px;
-    height: 480px;
-    & > div {
-      margin: 10px 0;
-    }
-  }
-`;
+import WorksStyle from "./WorksStyle";
 
 export default function WorksReactTodoList({
   gitHubLink,
@@ -31,7 +12,7 @@ export default function WorksReactTodoList({
 }) {
   return (
     <CtnWorks>
-      <LayoutStyles>
+      <WorksStyle>
         <WorksReactTodoListTitle />
         <WorksReactTodoListScreenShot />
         <TxtWorksDescription>
@@ -49,7 +30,7 @@ export default function WorksReactTodoList({
           투두리스트의 내용은 DB에 저장됩니다.
         </TxtWorksDescription>
         <WorksReactTodoListGitHubLinks gitHubLink={gitHubLink} />
-      </LayoutStyles>
+      </WorksStyle>
     </CtnWorks>
   );
 }

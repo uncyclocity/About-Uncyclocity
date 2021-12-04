@@ -15,6 +15,11 @@ const Styles = styled.div`
   }
 `;
 
+const LastMargin = styled.div`
+  margin: 0 !important;
+  padding: 0 0.1px;
+`;
+
 export default function TmplWorks({
   gitHubLinkForestia,
   gitHubLinkReactTodoList,
@@ -26,6 +31,7 @@ export default function TmplWorks({
     <Styles>
       <WorksForestia gitHubLink={gitHubLinkForestia} />
       <WorksReactTodoList gitHubLink={gitHubLinkReactTodoList} />
+      <LastMargin />
     </Styles>
   );
 }
