@@ -15,9 +15,11 @@ const Styles = styled.div`
   }
 `;
 
-const LastMargin = styled.div`
+const LRMargin = styled.div`
   margin: 0 !important;
-  padding: 0 0.1px;
+  @media screen and (max-width: 700px) {
+    padding: 0 0.1px;
+  }
 `;
 
 export default function TmplWorks({
@@ -29,9 +31,10 @@ export default function TmplWorks({
 }) {
   return (
     <Styles>
+      <LRMargin />
       <WorksForestia gitHubLink={gitHubLinkForestia} />
       <WorksReactTodoList gitHubLink={gitHubLinkReactTodoList} />
-      <LastMargin />
+      <LRMargin />
     </Styles>
   );
 }
