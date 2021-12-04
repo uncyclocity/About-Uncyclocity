@@ -2,9 +2,9 @@ import styled from "styled-components";
 import BtnHeaderCall from "../atoms/button/BtnHeaderCall";
 import BtnHeaderEmail from "../atoms/button/BtnHeaderEmail";
 import BtnHeaderGitHub from "../atoms/button/BtnHeaderGitHub";
-import HeaderPopupCall from "../morecules/HeaderPopupCall";
-import HeaderPopupEmail from "../morecules/HeaderPopupEmail";
-import HeaderPopupGithubLink from "../morecules/HeaderPopupGithubLink";
+import HeaderPopupCall from "../molecules/HeaderPopupCall";
+import HeaderPopupEmail from "../molecules/HeaderPopupEmail";
+import HeaderPopupGithubLink from "../molecules/HeaderPopupGithubLink";
 
 const LayoutStyle = styled.div`
   display: flex;

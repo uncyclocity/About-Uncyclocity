@@ -8,7 +8,7 @@ const LayoutStyle = styled.div`
   margin: 20px 0;
   justify-content: space-between;
   @media screen and (max-width: 700px) {
-    width: 280px;
+    width: 300px;
     margin: 5px 0;
   }
 `;

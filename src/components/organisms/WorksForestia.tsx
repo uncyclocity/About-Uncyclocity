@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
-import WorksForestiaGitHubLinks from "../morecules/WorksForestiaGitHubLinks";
-import WorksForestiaScreenShot from "../morecules/WorksForestiaScreenShot";
-import WorksForestiaTitle from "../morecules/WorksForestiaTitle";
+import WorksForestiaGitHubLinks from "../molecules/WorksForestiaGitHubLinks";
+import WorksForestiaScreenShot from "../molecules/WorksForestiaScreenShot";
+import WorksForestiaTitle from "../molecules/WorksForestiaTitle";
 
 const LayoutStyles = styled.div`
   width: 550px;

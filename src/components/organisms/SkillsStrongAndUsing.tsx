@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import SkillsStrongs from "../morecules/SkillsStrongs";
-import SkillsUseds from "../morecules/SkillsUseds";
-import SkillsUsings from "../morecules/SkillsUsings";
+import SkillsStrongs from "../molecules/SkillsStrongs";
+import SkillsUseds from "../molecules/SkillsUseds";
+import SkillsUsings from "../molecules/SkillsUsings";
 
 const Styles = styled.div`
   display: flex;

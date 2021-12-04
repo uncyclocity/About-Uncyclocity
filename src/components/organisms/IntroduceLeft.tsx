@@ -1,5 +1,5 @@
 import TxtIntroduceMsg2 from "../atoms/text/TxtIntroduceMsg2";
-import IntroduceProfile from "../morecules/IntroduceProfile";
+import IntroduceProfile from "../molecules/IntroduceProfile";
 
 export default function IntroduceLeft() {
   return (

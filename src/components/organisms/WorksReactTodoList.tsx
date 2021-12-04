@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
-import WorksReactTodoListGitHubLinks from "../morecules/WorksReactTodoListGitHubLinks";
-import WorksReactTodoListScreenShot from "../morecules/WorksReactTodoListScreenShot";
-import WorksReactTodoListTitle from "../morecules/WorksReactTodoListTitle";
+import WorksReactTodoListGitHubLinks from "../molecules/WorksReactTodoListGitHubLinks";
+import WorksReactTodoListScreenShot from "../molecules/WorksReactTodoListScreenShot";
+import WorksReactTodoListTitle from "../molecules/WorksReactTodoListTitle";
 
 const LayoutStyles = styled.div`
   width: 550px;

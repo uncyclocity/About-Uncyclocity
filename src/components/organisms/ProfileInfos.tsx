@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ProfileContact from "../morecules/ProfileContact";
-import ProfileInfo from "../morecules/ProfileInfo";
-import ProfileLink from "../morecules/ProfileLink";
-import ProfilePhotoAndName from "../morecules/ProfilePhotoAndName";
+import ProfileContact from "../molecules/ProfileContact";
+import ProfileInfo from "../molecules/ProfileInfo";
+import ProfileLink from "../molecules/ProfileLink";
+import ProfilePhotoAndName from "../molecules/ProfilePhotoAndName";
 
 const LayoutStyle = styled.div`
   display: flex;
