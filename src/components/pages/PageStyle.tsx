@@ -4,12 +4,11 @@ import { SlideUp, SlideDown } from "../../styles/keyframes/slide";
 import { useSampleState } from "../context/pageContext";
 
 const Styles = styled.div`
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  animation: 0.35s ease-in-out 0s ${SlideUp};
+  animation: 0.25s ease-in-out 0s ${SlideUp};
   ${({ unmountAnimation }: { unmountAnimation: boolean }) =>
     unmountAnimation &&
     css`

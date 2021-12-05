@@ -9,8 +9,6 @@ const Styles = styled.div`
   opacity: 0.5;
   position: absolute;
   bottom: 100px;
-  position: fixed;
-  margin-left: 30px;
   animation: 0.25s ease-in-out 0s ${SlideUp};
   ${({ leave }: { leave: boolean }) =>
     leave &&

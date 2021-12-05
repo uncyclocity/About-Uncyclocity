@@ -14,9 +14,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .outer {
+    height: 80vh;
     overflow-y: hidden;
-    flex-direction: column;
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &::webkit-scrollbar {
       display: none;

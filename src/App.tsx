@@ -16,32 +16,52 @@ import TmplHeader from "./components/templates/TmplHeader";
 import { theme } from "./styles/theme";
 
 export default function App() {
+  const outerDivRef = useRef<HTMLDivElement>(null);
   const {
     nowSlide,
     headerHover,
   }: { nowSlide: number; headerHover: HeaderHover } = useSampleState();
   const dispatch = useSampleDispatch();
+  const timer = useRef<any>(null);
   const {
     viewText,
     setViewText,
   }: { viewText: string; setViewText: (text: string) => void } = useSnackBar();
-  const outerDivRef = useRef<HTMLDivElement>(null);
 
   const pageChangeworks = useCallback(
     (slideNum: number) => {
-      dispatch({ type: "SET_NOWSLIDE", state: slideNum });
+      dispatch({ type: "SET_ANIMATION", state: true });
+      setTimeout(() => {
+        dispatch({ type: "SET_ANIMATION", state: false });
+        dispatch({ type: "SET_NOWSLIDE", state: slideNum });
+      }, 250);
     },
     [dispatch]
   );
 
+  const toSetEnablePageChange = () => {
+    clearTimeout(timer.current);
+    timer.current = null;
+  };
+
   const pageChange = useCallback(
     (e: any) => {
-      e.preventDefault();
-      const { deltaY } = e;
-      if (deltaY > 0 && nowSlide < 4) {
-        pageChangeworks(nowSlide + 1);
-      } else if (deltaY < 0 && nowSlide > 0) {
-        pageChangeworks(nowSlide - 1);
+      if (!timer.current) {
+        e.preventDefault();
+        const { deltaY } = e;
+        if (deltaY > 0 && nowSlide < 4) {
+          pageChangeworks(nowSlide + 1);
+        } else if (deltaY < 0 && nowSlide > 0) {
+          pageChangeworks(nowSlide - 1);
+        }
+        timer.current = setTimeout(() => {
+          toSetEnablePageChange();
+        }, 250);
+      } else {
+        clearTimeout(timer.current);
+        timer.current = setTimeout(() => {
+          toSetEnablePageChange();
+        }, 250);
       }
     },
     [nowSlide, pageChangeworks]
@@ -106,32 +126,23 @@ export default function App() {
     };
   }, [pageChange]);
 
-  useEffect(() => {
-    const pageHeight = window.innerHeight;
-    console.log(pageHeight * nowSlide);
-    outerDivRef.current?.scrollTo({
-      top: pageHeight * nowSlide,
-      behavior: "smooth",
-    });
-  }, [nowSlide]);
-
   return (
     <ThemeProvider theme={theme}>
-      <div ref={outerDivRef} className="outer">
-        <Welcome />
-        <Profile />
-        <Introduce />
-        <Skills />
-        <Works />
-      </div>
       <TmplHeader
         headerHover={headerHover}
         setHeaderHover={setHeaderHover}
         headerClick={headerClick}
         headerClickMobile={headerClickMobile}
       />
+      <div ref={outerDivRef} className="outer">
+        {nowSlide === 0 && <Welcome />}
+        {nowSlide === 1 && <Profile />}
+        {nowSlide === 2 && <Introduce />}
+        {nowSlide === 3 && <Skills />}
+        {nowSlide === 4 && <Works />}
+        {viewText && <SnackBar text={viewText} />}
+      </div>
       <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
-      {viewText && <SnackBar text={viewText} />}
     </ThemeProvider>
   );
 }
