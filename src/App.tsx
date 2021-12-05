@@ -22,7 +22,7 @@ export default function App() {
     headerHover,
   }: { nowSlide: number; headerHover: HeaderHover } = useSampleState();
   const dispatch = useSampleDispatch();
-  const timer = useRef(setTimeout(() => {}, 0));
+  const timer = useRef<any>(null);
   const {
     viewText,
     setViewText,
@@ -39,10 +39,14 @@ export default function App() {
     [dispatch]
   );
 
+  const toSetEnablePageChange = () => {
+    clearTimeout(timer.current);
+    timer.current = null;
+  };
+
   const pageChange = useCallback(
     (e: any) => {
-      clearTimeout(timer.current);
-      timer.current = setTimeout(() => {
+      if (!timer.current) {
         e.preventDefault();
         const { deltaY } = e;
         if (deltaY > 0 && nowSlide < 4) {
@@ -50,7 +54,15 @@ export default function App() {
         } else if (deltaY < 0 && nowSlide > 0) {
           pageChangeworks(nowSlide - 1);
         }
-      }, 100);
+        timer.current = setTimeout(() => {
+          toSetEnablePageChange();
+        }, 300);
+      } else {
+        clearTimeout(timer.current);
+        timer.current = setTimeout(() => {
+          toSetEnablePageChange();
+        }, 300);
+      }
     },
     [nowSlide, pageChangeworks]
   );
