@@ -56,12 +56,12 @@ export default function App() {
         }
         timer.current = setTimeout(() => {
           toSetEnablePageChange();
-        }, 300);
+        }, 250);
       } else {
         clearTimeout(timer.current);
         timer.current = setTimeout(() => {
           toSetEnablePageChange();
-        }, 300);
+        }, 250);
       }
     },
     [nowSlide, pageChangeworks]
