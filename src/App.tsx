@@ -34,7 +34,7 @@ export default function App() {
       setTimeout(() => {
         dispatch({ type: "SET_ANIMATION", state: false });
         dispatch({ type: "SET_NOWSLIDE", state: slideNum });
-      }, 250);
+      }, 350);
     },
     [dispatch]
   );
