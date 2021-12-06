@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { SlideUp } from "../../styles/keyframes/slide";
 import WorksForestia from "../organisms/WorksForestia";
 import WorksReactTodoList from "../organisms/WorksReactTodoList";
 
@@ -22,6 +23,16 @@ const LRMargin = styled.div`
   }
 `;
 
+const ViewAnimation = styled.div`
+  animation: 0.25s ease-in-out 0s ${SlideUp};
+  ${({ delayTime }: { delayTime: number }) =>
+    css`
+      animation-delay: ${delayTime}s;
+    `}
+  animation-fill-mode: forwards;
+  opacity: 0;
+`;
+
 export default function TmplWorks({
   gitHubLinkForestia,
   gitHubLinkReactTodoList,
@@ -32,8 +43,12 @@ export default function TmplWorks({
   return (
     <Styles>
       <LRMargin />
-      <WorksForestia gitHubLink={gitHubLinkForestia} />
-      <WorksReactTodoList gitHubLink={gitHubLinkReactTodoList} />
+      <ViewAnimation delayTime={0.2}>
+        <WorksForestia gitHubLink={gitHubLinkForestia} />
+      </ViewAnimation>
+      <ViewAnimation delayTime={0.5}>
+        <WorksReactTodoList gitHubLink={gitHubLinkReactTodoList} />
+      </ViewAnimation>
       <LRMargin />
     </Styles>
   );
