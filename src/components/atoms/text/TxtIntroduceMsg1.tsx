@@ -28,10 +28,8 @@ const NormalTextStyle = styled.div`
   opacity: 0;
 
   @media screen and (max-width: 700px) {
-    * {
-      margin: 0 auto;
-      margin-bottom: 5px;
-    }
+    margin: 0 auto;
+    margin-bottom: 5px;
   }
 `;
 
