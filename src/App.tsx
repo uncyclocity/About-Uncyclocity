@@ -79,12 +79,12 @@ export default function App() {
     call: () => {
       const phoneNum = "+82 10-2610-3861";
       navigator.clipboard.writeText(phoneNum);
-      setViewText("클립보드에 복사되었습니다.");
+      setViewText("전화번호가 클립보드에 복사되었습니다.");
     },
     email: () => {
       const emailUrl = "seongbeom_lee@kakao.com";
       navigator.clipboard.writeText(emailUrl);
-      setViewText("클립보드에 복사되었습니다.");
+      setViewText("이메일 주소가 클립보드에 복사되었습니다.");
     },
   };
 

@@ -21,3 +21,14 @@ export const SlideDown = keyframes`
     opacity: 0;
   }
 `;
+
+export const SlideLeft = keyframes`
+  from { 
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`;
