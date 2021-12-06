@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Styles = styled.div`
-  font-size: 16px;
+  font-size: 17px;
   color: #808080;
   text-align: center;
 
@@ -18,7 +18,7 @@ export default function TxtWelcomeScrollHint() {
       <Styles>
         스크롤을 내리거나 하단 버튼을 눌러 페이지를 넘기세요 ;)
         <br />
-        (터치패드의 경우 살짝만 스크롤 해주시기를 권장합니다..!)
+        (터치패드의 경우 살짝씩 스크롤 하시기를 권장합니다.)
       </Styles>
     );
   }

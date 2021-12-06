@@ -1,23 +1,33 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import "../../../styles/font.css";
-import Typist from "react-text-typist";
 import React from "react";
+import { SlideUp } from "../../../styles/keyframes/slide";
 
-const NormalTextStyle = styled.div`
+const LayoutStyle = styled.div`
   display: flex;
   flex-direction: column;
   font-family: NanumSquareL;
   font-size: 35px;
   width: 380px;
-
-  * {
-    margin-left: auto;
-    margin-bottom: 10px;
-  }
+  opacity: 1;
 
   @media screen and (max-width: 700px) {
     font-size: 20px;
+  }
+`;
 
+const NormalTextStyle = styled.div`
+  animation: 0.25s ease-in-out 0s ${SlideUp};
+  ${({ delayTime }: { delayTime: number }) =>
+    css`
+      animation-delay: ${delayTime}s;
+    `}
+  animation-fill-mode: forwards;
+  margin-left: auto;
+  margin-bottom: 10px;
+  opacity: 0;
+
+  @media screen and (max-width: 700px) {
     * {
       margin: 0 auto;
       margin-bottom: 5px;
@@ -25,40 +35,22 @@ const NormalTextStyle = styled.div`
   }
 `;
 
-const StrongTextStyle = styled.div`
+const StrongTextStyle = styled(NormalTextStyle)`
   font-family: NanumSquareB;
 `;
 
 function TxtIntroduceMsg1() {
   return (
-    <NormalTextStyle>
-      <Typist
-        sentences={["반가워요!"]}
-        loop={false}
-        showCursor={false}
-        startDelay={300}
-      />
-      <Typist
-        sentences={["지속적인 발전을 중시하는"]}
-        loop={false}
-        startDelay={800}
-        showCursor={false}
-      />
-      <StrongTextStyle>
-        <Typist
-          sentences={["프론트엔드 개발자 지망생"]}
-          loop={false}
-          startDelay={2000}
-          showCursor={false}
-        />
+    <LayoutStyle>
+      <NormalTextStyle delayTime={0.5}>반가워요!</NormalTextStyle>
+      <NormalTextStyle delayTime={1.4}>
+        지속적인 발전을 중시하는
+      </NormalTextStyle>
+      <StrongTextStyle delayTime={2.3}>
+        프론트엔드 개발자 지망생
       </StrongTextStyle>
-      <Typist
-        sentences={["인사드립니다 :)"]}
-        loop={false}
-        startDelay={3200}
-        showCursor={true}
-      />
-    </NormalTextStyle>
+      <NormalTextStyle delayTime={3.2}>인사드립니다 :)</NormalTextStyle>
+    </LayoutStyle>
   );
 }
 
