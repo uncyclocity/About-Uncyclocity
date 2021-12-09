@@ -16,7 +16,7 @@ export default function WorksForestia({
         <WorksForestiaTitle />
         <WorksForestiaScreenShot />
         <TxtWorksDescription>
-          SSG 렌더링 방식 프레임워크인
+          CSR-SSR 렌더링 방식의 프레임워크인
           <br />
           Next.js를 학습하기 위해 제작한
           <br />
