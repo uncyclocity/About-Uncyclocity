@@ -6,7 +6,7 @@ const Styles = styled.div`
   text-align: center;
 
   @media screen and (max-width: 700px) {
-    font-size: 14px;
+    font-size: 13px;
   }
 `;
 
