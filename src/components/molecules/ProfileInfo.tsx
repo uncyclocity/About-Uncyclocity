@@ -2,15 +2,19 @@ import styled from "styled-components";
 import TxtProfileInfo from "../atoms/text/TxtProfileInfo";
 
 const Styles = styled.div`
-  * {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  & > div {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   @media screen and (max-width: 700px) {
-    * {
-      margin-top: 2.5px;
-      margin-bottom: 2.5px;
+    & > div {
+      margin-top: 3px;
+      margin-bottom: 3px;
+
+      * {
+        margin-bottom: 2px;
+      }
     }
   }
 `;

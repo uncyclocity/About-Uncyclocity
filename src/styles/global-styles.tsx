@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .outer {
-    height: 80vh;
+    height: 82vh;
     overflow-y: hidden;
     display: flex;
     align-items: center;

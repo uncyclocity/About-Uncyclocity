@@ -8,7 +8,7 @@ const LayoutStyle = styled.div`
   flex-direction: column;
   font-family: NanumSquareL;
   font-size: 35px;
-  width: 380px;
+  width: 375px;
   opacity: 1;
 
   @media screen and (max-width: 700px) {
