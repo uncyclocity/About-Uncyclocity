@@ -13,7 +13,7 @@ const TitleStyle = styled.div`
   font-family: NanumSquareB;
   font-size: 25px;
   @media screen and (max-width: 700px) {
-    font-size: 20px;
+    font-size: 19px;
   }
 `;
 

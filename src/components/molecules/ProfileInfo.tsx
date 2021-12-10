@@ -3,14 +3,14 @@ import TxtProfileInfo from "../atoms/text/TxtProfileInfo";
 
 const Styles = styled.div`
   & > div {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   @media screen and (max-width: 700px) {
     & > div {
-      margin-top: 3px;
-      margin-bottom: 3px;
+      margin-top: 5px;
+      margin-bottom: 5px;
 
       * {
         margin-bottom: 2px;
