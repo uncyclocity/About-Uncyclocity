@@ -34,20 +34,20 @@ const ViewAnimation = styled.div`
 `;
 
 export default function TmplWorks({
-  gitHubLinkForestia,
-  gitHubLinkReactTodoList,
+  forestiaLinks,
+  reactTodoListLinks,
 }: {
-  gitHubLinkForestia: GitHubLink;
-  gitHubLinkReactTodoList: GitHubLink;
+  forestiaLinks: WorkLinks;
+  reactTodoListLinks: WorkLinks;
 }) {
   return (
     <Styles>
       <LRMargin />
       <ViewAnimation delayTime={0.2}>
-        <WorksForestia gitHubLink={gitHubLinkForestia} />
+        <WorksForestia workLinks={forestiaLinks} />
       </ViewAnimation>
       <ViewAnimation delayTime={0.5}>
-        <WorksReactTodoList gitHubLink={gitHubLinkReactTodoList} />
+        <WorksReactTodoList workLinks={reactTodoListLinks} />
       </ViewAnimation>
       <LRMargin />
     </Styles>

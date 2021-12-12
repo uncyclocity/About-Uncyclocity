@@ -1,14 +1,14 @@
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
-import WorksReactTodoListGitHubLinks from "../molecules/WorksReactTodoListGitHubLinks";
+import WorksReactTodoListLinks from "../molecules/WorksReactTodoListLinks";
 import WorksReactTodoListScreenShot from "../molecules/WorksReactTodoListScreenShot";
 import WorksReactTodoListTitle from "../molecules/WorksReactTodoListTitle";
 import WorksStyle from "./WorksStyle";
 
 export default function WorksReactTodoList({
-  gitHubLink,
+  workLinks,
 }: {
-  gitHubLink: GitHubLink;
+  workLinks: WorkLinks;
 }) {
   return (
     <CtnWorks>
@@ -29,7 +29,7 @@ export default function WorksReactTodoList({
           <br />
           투두리스트의 내용은 DB에 저장됩니다.
         </TxtWorksDescription>
-        <WorksReactTodoListGitHubLinks gitHubLink={gitHubLink} />
+        <WorksReactTodoListLinks workLinks={workLinks} />
       </WorksStyle>
     </CtnWorks>
   );

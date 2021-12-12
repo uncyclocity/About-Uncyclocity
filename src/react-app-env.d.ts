@@ -14,8 +14,9 @@ type HeaderClick = {
   email: (e?: any) => void;
 };
 
-// 작품 페이지에서 각 작품의 깃허브 링크
-type GitHubLink = {
+// 작품 페이지에서 각 작품의 깃허브 및 시연 링크
+type WorkLinks = {
   gotoFrontRepo: () => void;
   gotoBackRepo: () => void;
+  gotoWorkLink: () => void;
 };

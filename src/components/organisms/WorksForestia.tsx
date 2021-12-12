@@ -1,15 +1,11 @@
 import CtnWorks from "../atoms/container/CtnWorks";
 import TxtWorksDescription from "../atoms/text/TxtWorksDescription";
-import WorksForestiaGitHubLinks from "../molecules/WorksForestiaGitHubLinks";
+import WorksForestiaLinks from "../molecules/WorksForestiaLinks";
 import WorksForestiaScreenShot from "../molecules/WorksForestiaScreenShot";
 import WorksForestiaTitle from "../molecules/WorksForestiaTitle";
 import WorksStyle from "./WorksStyle";
 
-export default function WorksForestia({
-  gitHubLink,
-}: {
-  gitHubLink: GitHubLink;
-}) {
+export default function WorksForestia({ workLinks }: { workLinks: WorkLinks }) {
   return (
     <CtnWorks>
       <WorksStyle>
@@ -29,7 +25,7 @@ export default function WorksForestia({
           <br />
           커뮤 활동이 가능합니다.
         </TxtWorksDescription>
-        <WorksForestiaGitHubLinks gitHubLink={gitHubLink} />
+        <WorksForestiaLinks workLinks={workLinks} />
       </WorksStyle>
     </CtnWorks>
   );

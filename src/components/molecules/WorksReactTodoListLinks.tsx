@@ -1,4 +1,4 @@
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import styled from "styled-components";
 import IcoBadge from "../atoms/icon/IcoBadge";
 
@@ -14,26 +14,34 @@ const LinkStyle = styled.div`
   cursor: pointer;
 `;
 
-export default function WorksReactTodoListGitHubLinks({
-  gitHubLink,
+export default function WorksReactTodoListLinks({
+  workLinks,
 }: {
-  gitHubLink: GitHubLink;
+  workLinks: WorkLinks;
 }) {
   return (
     <LinksStyle>
-      <LinkStyle onClick={gitHubLink.gotoFrontRepo}>
+      <LinkStyle onClick={workLinks.gotoFrontRepo}>
         <IcoBadge
           icon={<AiFillGithub />}
-          text="React-TodoList-Front"
+          text="Front-End"
           bgColor="#373737"
           txtColor="white"
         />
       </LinkStyle>
-      <LinkStyle onClick={gitHubLink.gotoBackRepo}>
+      <LinkStyle onClick={workLinks.gotoBackRepo}>
         <IcoBadge
           icon={<AiFillGithub />}
-          text="React-TodoList-Back"
+          text="Back-End"
           bgColor="#373737"
+          txtColor="white"
+        />
+      </LinkStyle>
+      <LinkStyle onClick={workLinks.gotoWorkLink}>
+        <IcoBadge
+          icon={<AiOutlineLink />}
+          text="사용해보기"
+          bgColor="#20c997"
           txtColor="white"
         />
       </LinkStyle>
