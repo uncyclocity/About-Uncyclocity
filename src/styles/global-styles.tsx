@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
 
+    @media screen and (max-width: 700px) {
+      min-height: 500px;
+    }
+
     &::webkit-scrollbar {
       display: none;
     }
