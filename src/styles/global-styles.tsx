@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
   .outer {
     height: 82vh;
+    min-height: 750px;
     overflow-y: hidden;
     display: flex;
     align-items: center;
