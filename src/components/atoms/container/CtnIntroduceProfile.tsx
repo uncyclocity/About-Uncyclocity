@@ -5,6 +5,7 @@ import img from "./IntroduceProfileCtnImg.png";
 const Styles = styled.div`
   background-image: url("${img}");
   background-size: 220px;
+  background-repeat: no-repeat;
   padding: 7px 15.5px;
   width: 220px;
 
