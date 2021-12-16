@@ -19,7 +19,7 @@ function TxtIntroduceMsg1() {
       <NormalTextStyle>프론트엔드 개발자를 지망하는</NormalTextStyle>
       <NormalTextStyle>SW 마이스터고 졸업생입니다.</NormalTextStyle>
       <NormalTextStyle>
-        현재는 판교 테크노밸리의 솔루션 업체 소속의
+        현재는 판교 테크노밸리 UI/UX 프레임워크 업체 소속의
       </NormalTextStyle>
       <NormalTextStyle>
         현역 산업기능요원으로서 복무 중에 있습니다.

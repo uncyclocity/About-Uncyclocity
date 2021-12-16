@@ -7,6 +7,7 @@ import BtnFooterWorks from "../atoms/button/BtnFooterWorks";
 
 const Styles = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 620px;
 
