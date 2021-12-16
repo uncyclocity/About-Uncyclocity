@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BtnFooterStyle = styled.div`
+const Styles = styled.div`
   font-size: 17px;
   text-align: center;
   letter-spacing: 5px;
@@ -22,4 +22,24 @@ const BtnFooterStyle = styled.div`
   }};
 `;
 
-export default BtnFooterStyle;
+export default function BtnFooter({
+  nowSlide,
+  pageNum,
+  onClick,
+  text,
+}: {
+  nowSlide: number;
+  pageNum: number;
+  onClick: (slideNum: number) => void;
+  text: string;
+}) {
+  return (
+    <Styles
+      nowSlide={nowSlide}
+      pageNum={pageNum}
+      onClick={() => pageNum !== nowSlide && onClick(pageNum)}
+    >
+      {text}
+    </Styles>
+  );
+}

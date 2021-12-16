@@ -1,7 +1,8 @@
+import { AiTwotoneMail } from "react-icons/ai";
+import { BsGithub } from "react-icons/bs";
+import { IoIosCall } from "react-icons/io";
 import styled from "styled-components";
-import BtnHeaderCall from "../atoms/button/BtnHeaderCall";
-import BtnHeaderEmail from "../atoms/button/BtnHeaderEmail";
-import BtnHeaderGitHub from "../atoms/button/BtnHeaderGitHub";
+import BtnHeader from "../atoms/button/BtnHeader";
 import HeaderPopupCall from "../molecules/HeaderPopupCall";
 import HeaderPopupEmail from "../molecules/HeaderPopupEmail";
 import HeaderPopupGithubLink from "../molecules/HeaderPopupGithubLink";
@@ -34,42 +35,54 @@ export default function HeaderBtns({
     <LayoutStyle>
       <BtnsStyle>
         {matchMedia("screen and (max-width: 700px)").matches ? (
-          <BtnHeaderGitHub
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.githubLink}
+            btnKind="githubLink"
+            icon={<BsGithub />}
           />
         ) : (
-          <BtnHeaderGitHub
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClick.githubLink}
+            btnKind="githubLink"
+            icon={<BsGithub />}
           />
         )}
         {headerHover.githubLink && <HeaderPopupGithubLink />}
       </BtnsStyle>
       <BtnsStyle>
         {matchMedia("screen and (max-width: 700px)").matches ? (
-          <BtnHeaderCall
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.call}
+            btnKind="call"
+            icon={<IoIosCall />}
           />
         ) : (
-          <BtnHeaderCall
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClick.call}
+            btnKind="call"
+            icon={<IoIosCall />}
           />
         )}
         {headerHover.call && <HeaderPopupCall />}
       </BtnsStyle>
       <BtnsStyle>
         {matchMedia("screen and (max-width: 700px)").matches ? (
-          <BtnHeaderEmail
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.email}
+            btnKind="email"
+            icon={<AiTwotoneMail />}
           />
         ) : (
-          <BtnHeaderEmail
+          <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClick.email}
+            btnKind="email"
+            icon={<AiTwotoneMail />}
           />
         )}
         {headerHover.email && <HeaderPopupEmail />}
