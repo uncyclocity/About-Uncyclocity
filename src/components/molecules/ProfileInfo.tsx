@@ -29,7 +29,7 @@ export default function ProfileInfo() {
       />
       <TxtProfileInfo
         title="경력"
-        text="쉬프트정보통신(주) 솔루션 개발자"
+        text="쉬프트정보통신(주) UI/UX 프레임워크 개발자"
         term="2020. 11 ~"
       />
       <TxtProfileInfo
