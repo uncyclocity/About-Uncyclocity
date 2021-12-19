@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 import { SlideUp } from "../../styles/keyframes/slide";
 import WorksForestia from "../organisms/WorksForestia";
 import WorksReactTodoList from "../organisms/WorksReactTodoList";
+import Slide from "../utils/slide";
+import SliderContainer from "../utils/sliderContainer";
 
 const Styles = styled.div`
   width: 1150px;
@@ -13,13 +15,6 @@ const Styles = styled.div`
     & > div {
       margin: 0 10px;
     }
-  }
-`;
-
-const LRMargin = styled.div`
-  margin: 0 !important;
-  @media screen and (max-width: 700px) {
-    padding: 0 0.1px;
   }
 `;
 
@@ -36,20 +31,41 @@ const ViewAnimation = styled.div`
 export default function TmplWorks({
   forestiaLinks,
   reactTodoListLinks,
+  slideNum,
+  slideNumSetter,
 }: {
   forestiaLinks: WorkLinks;
   reactTodoListLinks: WorkLinks;
+  slideNum: number;
+  slideNumSetter: (num: number) => void;
 }) {
   return (
     <Styles>
-      <LRMargin />
-      <ViewAnimation delayTime={0.2}>
-        <WorksForestia workLinks={forestiaLinks} />
-      </ViewAnimation>
-      <ViewAnimation delayTime={0.5}>
-        <WorksReactTodoList workLinks={reactTodoListLinks} />
-      </ViewAnimation>
-      <LRMargin />
+      {!matchMedia("screen and (max-width: 700px)").matches ? (
+        <>
+          <ViewAnimation delayTime={0.2}>
+            <WorksForestia workLinks={forestiaLinks} />
+          </ViewAnimation>
+          <ViewAnimation delayTime={0.5}>
+            <WorksReactTodoList workLinks={reactTodoListLinks} />
+          </ViewAnimation>
+        </>
+      ) : (
+        <>
+          <SliderContainer slideNum={slideNum} slideNumSetter={slideNumSetter}>
+            <Slide>
+              <ViewAnimation delayTime={0.2}>
+                <WorksForestia workLinks={forestiaLinks} />
+              </ViewAnimation>
+            </Slide>
+            <Slide>
+              <ViewAnimation delayTime={0.5}>
+                <WorksReactTodoList workLinks={reactTodoListLinks} />
+              </ViewAnimation>
+            </Slide>
+          </SliderContainer>
+        </>
+      )}
     </Styles>
   );
 }

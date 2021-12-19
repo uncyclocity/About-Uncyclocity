@@ -1,7 +1,10 @@
 import TmplWorks from "../templates/TmplWorks";
 import PageStyle from "./PageStyle";
+import useSlide from "../utils/useSlide";
 
 export default function Works() {
+  const { slideNum, slideNumSetter } = useSlide(2);
+
   const forestiaLinks: WorkLinks = {
     gotoFrontRepo: () => {
       const githubUrl = "https://github.com/uncyclocity/Forestia-Front";
@@ -37,6 +40,8 @@ export default function Works() {
       <TmplWorks
         forestiaLinks={forestiaLinks}
         reactTodoListLinks={reactTodoListLinks}
+        slideNum={slideNum}
+        slideNumSetter={slideNumSetter}
       />
     </PageStyle>
   );
