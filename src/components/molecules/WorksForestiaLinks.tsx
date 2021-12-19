@@ -6,7 +6,7 @@ const LinksStyle = styled.div`
   display: flex;
   flex-direction: row;
   & > div {
-    margin: 0 5px;
+    margin: 0 2.5px;
   }
 `;
 

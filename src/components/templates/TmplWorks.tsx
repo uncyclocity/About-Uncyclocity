@@ -1,20 +1,20 @@
 import styled, { css } from "styled-components";
 import { SlideUp } from "../../styles/keyframes/slide";
+import BtnWorksSlide from "../atoms/button/BtnWorksSlide";
 import WorksForestia from "../organisms/WorksForestia";
 import WorksReactTodoList from "../organisms/WorksReactTodoList";
 import Slide from "../utils/slide";
 import SliderContainer from "../utils/sliderContainer";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 const Styles = styled.div`
   width: 1150px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   @media screen and (max-width: 700px) {
     width: 100vw;
-    & > div {
-      margin: 0 10px;
-    }
   }
 `;
 
@@ -52,7 +52,12 @@ export default function TmplWorks({
         </>
       ) : (
         <>
-          <SliderContainer slideNum={slideNum} slideNumSetter={slideNumSetter}>
+          <BtnWorksSlide
+            icon={<GrPrevious />}
+            slideNumSetter={slideNumSetter}
+            slideNum={slideNum - 1}
+          />
+          <SliderContainer slideNum={slideNum}>
             <Slide>
               <ViewAnimation delayTime={0.2}>
                 <WorksForestia workLinks={forestiaLinks} />
@@ -64,6 +69,11 @@ export default function TmplWorks({
               </ViewAnimation>
             </Slide>
           </SliderContainer>
+          <BtnWorksSlide
+            icon={<GrNext />}
+            slideNumSetter={slideNumSetter}
+            slideNum={slideNum + 1}
+          />
         </>
       )}
     </Styles>

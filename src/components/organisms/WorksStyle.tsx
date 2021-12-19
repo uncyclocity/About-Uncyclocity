@@ -9,14 +9,12 @@ const Styles = styled.div`
   justify-content: center;
   align-items: center;
   & > div {
-    margin: 15px 0;
+    margin: 11px 0;
   }
   @media screen and (max-width: 700px) {
-    width: 95vw;
-    height: 78vh;
-    & > div {
-      margin: 10px 0;
-    }
+    width: 80vw;
+    height: 75vh;
+    margin: 1.5vh 0;
   }
 `;
 

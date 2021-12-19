@@ -6,6 +6,8 @@ export default function useSlide(maxPageNum: number) {
   const slideNumSetter = (num: number) => {
     if (num >= maxPageNum) {
       setSlideNum(0);
+    } else if (num < 0) {
+      setSlideNum(maxPageNum - 1);
     } else {
       setSlideNum(num);
     }
