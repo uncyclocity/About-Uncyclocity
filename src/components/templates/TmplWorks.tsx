@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components";
-import { SlideUp } from "../../styles/keyframes/slide";
+import styled from "styled-components";
 import BtnWorksSlide from "../atoms/button/BtnWorksSlide";
 import WorksForestia from "../organisms/WorksForestia";
 import WorksReactTodoList from "../organisms/WorksReactTodoList";
 import Slide from "../utils/slide";
 import SliderContainer from "../utils/sliderContainer";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { useSampleState } from "../context/pageContext";
 
 const Styles = styled.div`
   width: 1150px;
@@ -16,16 +16,6 @@ const Styles = styled.div`
   @media screen and (max-width: 700px) {
     width: 100vw;
   }
-`;
-
-const ViewAnimation = styled.div`
-  animation: 0.25s ease-in-out 0s ${SlideUp};
-  ${({ delayTime }: { delayTime: number }) =>
-    css`
-      animation-delay: ${delayTime}s;
-    `}
-  animation-fill-mode: forwards;
-  opacity: 0;
 `;
 
 export default function TmplWorks({
@@ -39,16 +29,14 @@ export default function TmplWorks({
   slideNum: number;
   slideNumSetter: (num: number) => void;
 }) {
+  const { mQuery } = useSampleState();
+
   return (
     <Styles>
-      {!matchMedia("screen and (max-width: 700px)").matches ? (
+      {!mQuery ? (
         <>
-          <ViewAnimation delayTime={0.2}>
-            <WorksForestia workLinks={forestiaLinks} />
-          </ViewAnimation>
-          <ViewAnimation delayTime={0.5}>
-            <WorksReactTodoList workLinks={reactTodoListLinks} />
-          </ViewAnimation>
+          <WorksForestia workLinks={forestiaLinks} />
+          <WorksReactTodoList workLinks={reactTodoListLinks} />
         </>
       ) : (
         <>
@@ -59,14 +47,10 @@ export default function TmplWorks({
           />
           <SliderContainer slideNum={slideNum}>
             <Slide>
-              <ViewAnimation delayTime={0.2}>
-                <WorksForestia workLinks={forestiaLinks} />
-              </ViewAnimation>
+              <WorksForestia workLinks={forestiaLinks} />
             </Slide>
             <Slide>
-              <ViewAnimation delayTime={0.5}>
-                <WorksReactTodoList workLinks={reactTodoListLinks} />
-              </ViewAnimation>
+              <WorksReactTodoList workLinks={reactTodoListLinks} />
             </Slide>
           </SliderContainer>
           <BtnWorksSlide

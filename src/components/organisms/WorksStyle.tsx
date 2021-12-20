@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { SlideUp } from "../../styles/keyframes/slide";
+import CtnWorks from "../atoms/container/CtnWorks";
 
 const Styles = styled.div`
   width: 550px;
@@ -18,10 +20,28 @@ const Styles = styled.div`
   }
 `;
 
+const ViewAnimation = styled.div`
+  animation: 0.25s ease-in-out 0s ${SlideUp};
+  ${({ delayTime }: { delayTime: number }) =>
+    css`
+      animation-delay: ${delayTime}s;
+    `}
+  animation-fill-mode: forwards;
+  opacity: 0;
+`;
+
 export default function WorksStyle({
+  delayTime,
   children,
 }: {
+  delayTime: number;
   children: React.ReactNode;
 }) {
-  return <Styles>{children}</Styles>;
+  return (
+    <ViewAnimation delayTime={delayTime}>
+      <CtnWorks>
+        <Styles>{children}</Styles>
+      </CtnWorks>
+    </ViewAnimation>
+  );
 }

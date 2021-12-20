@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useSampleState } from "../../context/pageContext";
 
 const Styles = styled.div`
   font-size: 17px;
@@ -11,7 +12,9 @@ const Styles = styled.div`
 `;
 
 export default function TxtWelcomeScrollHint() {
-  if (matchMedia("screen and (max-width: 700px)").matches) {
+  const { mQuery } = useSampleState();
+
+  if (mQuery) {
     return <Styles>하단의 버튼으로 페이지를 넘겨 보세요 ;)</Styles>;
   } else {
     return (

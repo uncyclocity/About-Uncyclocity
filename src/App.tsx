@@ -20,13 +20,22 @@ export default function App() {
   const {
     nowSlide,
     headerHover,
-  }: { nowSlide: number; headerHover: HeaderHover } = useSampleState();
+  }: { nowSlide: number; headerHover: HeaderHover; mQuery: boolean } =
+    useSampleState();
   const dispatch = useSampleDispatch();
   const timer = useRef<any>(null);
   const {
     viewText,
     setViewText,
   }: { viewText: string; setViewText: (text: string) => void } = useSnackBar();
+
+  const screenChange = (e: MediaQueryListEvent) => {
+    const matches = e.matches;
+    dispatch({
+      type: "SET_MQUERY",
+      state: matches,
+    });
+  };
 
   const pageChangeworks = useCallback(
     (slideNum: number) => {
@@ -125,6 +134,12 @@ export default function App() {
       outerDivRefCurrent?.removeEventListener("wheel", pageChange);
     };
   }, [pageChange]);
+
+  useEffect(() => {
+    const mql = window.matchMedia("screen and (max-width:700px)");
+    mql.addEventListener("change", screenChange);
+    return () => mql.removeEventListener("change", screenChange);
+  });
 
   return (
     <ThemeProvider theme={theme}>

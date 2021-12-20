@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSampleState } from "../../context/pageContext";
 
 const Styles = styled.div`
   font-size: 25px;
@@ -31,16 +32,12 @@ export default function BtnHeader({
   btnKind: string;
   icon: React.ReactNode;
 }) {
+  const { mQuery } = useSampleState();
+
   return (
     <Styles
-      onMouseEnter={() =>
-        !matchMedia("screen and (max-width: 700px)").matches &&
-        setHeaderHover(btnKind, true)
-      }
-      onMouseLeave={() =>
-        !matchMedia("screen and (max-width: 700px)").matches &&
-        setHeaderHover(btnKind, false)
-      }
+      onMouseEnter={() => !mQuery && setHeaderHover(btnKind, true)}
+      onMouseLeave={() => !mQuery && setHeaderHover(btnKind, false)}
       onClick={onClick}
     >
       {icon}

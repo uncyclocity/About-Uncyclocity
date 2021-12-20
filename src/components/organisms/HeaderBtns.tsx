@@ -3,6 +3,7 @@ import { BsGithub } from "react-icons/bs";
 import { IoIosCall } from "react-icons/io";
 import styled from "styled-components";
 import BtnHeader from "../atoms/button/BtnHeader";
+import { useSampleState } from "../context/pageContext";
 import HeaderPopupCall from "../molecules/HeaderPopupCall";
 import HeaderPopupEmail from "../molecules/HeaderPopupEmail";
 import HeaderPopupGithubLink from "../molecules/HeaderPopupGithubLink";
@@ -31,10 +32,12 @@ export default function HeaderBtns({
   headerClick: HeaderClick;
   headerClickMobile: HeaderClick;
 }) {
+  const { mQuery } = useSampleState();
+
   return (
     <LayoutStyle>
       <BtnsStyle>
-        {matchMedia("screen and (max-width: 700px)").matches ? (
+        {mQuery ? (
           <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.githubLink}
@@ -52,7 +55,7 @@ export default function HeaderBtns({
         {headerHover.githubLink && <HeaderPopupGithubLink />}
       </BtnsStyle>
       <BtnsStyle>
-        {matchMedia("screen and (max-width: 700px)").matches ? (
+        {mQuery ? (
           <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.call}
@@ -70,7 +73,7 @@ export default function HeaderBtns({
         {headerHover.call && <HeaderPopupCall />}
       </BtnsStyle>
       <BtnsStyle>
-        {matchMedia("screen and (max-width: 700px)").matches ? (
+        {mQuery ? (
           <BtnHeader
             setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.email}

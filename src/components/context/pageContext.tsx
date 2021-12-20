@@ -8,12 +8,14 @@ type State = {
     call: boolean;
     email: boolean;
   };
+  mQuery: boolean;
 };
 
 type Action =
   | { type: "SET_ANIMATION"; state: boolean }
   | { type: "SET_NOWSLIDE"; state: number }
-  | { type: "SET_HOVER"; key: string; value: boolean };
+  | { type: "SET_HOVER"; key: string; value: boolean }
+  | { type: "SET_MQUERY"; state: boolean };
 
 type SampleDispatch = Dispatch<Action>;
 
@@ -40,6 +42,11 @@ const reducer = (state: State, action: Action): State => {
           [action.key]: action.value,
         },
       };
+    case "SET_MQUERY":
+      return {
+        ...state,
+        mQuery: action.state,
+      };
     default:
       throw new Error("Unhandled Action");
   }
@@ -53,6 +60,7 @@ const initialState: State = {
     call: false,
     email: false,
   },
+  mQuery: window.innerWidth < 700 ? true : false,
 };
 
 export default function SampleProvider({
