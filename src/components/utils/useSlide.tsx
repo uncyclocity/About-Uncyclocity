@@ -13,5 +13,5 @@ export default function useSlide(maxPageNum: number) {
     }
   };
 
-  return { slideNum, slideNumSetter };
+  return { slideNum, slideNumSetter, maxPageNum };
 }

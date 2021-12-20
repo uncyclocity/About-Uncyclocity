@@ -4,7 +4,7 @@ import WorksForestia from "../organisms/WorksForestia";
 import WorksReactTodoList from "../organisms/WorksReactTodoList";
 import Slide from "../utils/slide";
 import SliderContainer from "../utils/sliderContainer";
-import { GrNext, GrPrevious } from "react-icons/gr";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { useSampleState } from "../context/pageContext";
 
 const Styles = styled.div`
@@ -23,11 +23,13 @@ export default function TmplWorks({
   reactTodoListLinks,
   slideNum,
   slideNumSetter,
+  maxPageNum,
 }: {
   forestiaLinks: WorkLinks;
   reactTodoListLinks: WorkLinks;
   slideNum: number;
   slideNumSetter: (num: number) => void;
+  maxPageNum: number;
 }) {
   const { mQuery } = useSampleState();
 
@@ -41,9 +43,10 @@ export default function TmplWorks({
       ) : (
         <>
           <BtnWorksSlide
-            icon={<GrPrevious />}
+            icon={<AiOutlineLeft />}
             slideNumSetter={slideNumSetter}
             slideNum={slideNum - 1}
+            maxPageNum={maxPageNum}
           />
           <SliderContainer slideNum={slideNum}>
             <Slide>
@@ -54,9 +57,10 @@ export default function TmplWorks({
             </Slide>
           </SliderContainer>
           <BtnWorksSlide
-            icon={<GrNext />}
+            icon={<AiOutlineRight />}
             slideNumSetter={slideNumSetter}
             slideNum={slideNum + 1}
+            maxPageNum={maxPageNum}
           />
         </>
       )}

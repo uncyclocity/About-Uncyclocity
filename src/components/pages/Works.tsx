@@ -3,7 +3,7 @@ import PageStyle from "./PageStyle";
 import useSlide from "../utils/useSlide";
 
 export default function Works() {
-  const { slideNum, slideNumSetter } = useSlide(2);
+  const { slideNum, slideNumSetter, maxPageNum } = useSlide(2);
 
   const forestiaLinks: WorkLinks = {
     gotoFrontRepo: () => {
@@ -42,6 +42,7 @@ export default function Works() {
         reactTodoListLinks={reactTodoListLinks}
         slideNum={slideNum}
         slideNumSetter={slideNumSetter}
+        maxPageNum={maxPageNum}
       />
     </PageStyle>
   );
