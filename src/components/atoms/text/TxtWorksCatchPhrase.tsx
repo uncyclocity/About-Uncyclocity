@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Styles = styled.div`
   font-family: NanumSquareB;
   text-align: center;
+  font-size: 16px;
 `;
 
 export default function TxtWorksCatchPhrase({
