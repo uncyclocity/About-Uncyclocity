@@ -10,10 +10,6 @@ const LinksStyle = styled.div`
   }
 `;
 
-const LinkStyle = styled.div`
-  cursor: pointer;
-`;
-
 export default function WorksReactTodoListLinks({
   workLinks,
 }: {
@@ -21,30 +17,28 @@ export default function WorksReactTodoListLinks({
 }) {
   return (
     <LinksStyle>
-      <LinkStyle onClick={workLinks.gotoFrontRepo}>
-        <IcoBadge
-          icon={<AiFillGithub />}
-          text="Front-End"
-          bgColor="#373737"
-          txtColor="white"
-        />
-      </LinkStyle>
-      <LinkStyle onClick={workLinks.gotoBackRepo}>
-        <IcoBadge
-          icon={<AiFillGithub />}
-          text="Back-End"
-          bgColor="#373737"
-          txtColor="white"
-        />
-      </LinkStyle>
-      <LinkStyle onClick={workLinks.gotoWorkLink}>
-        <IcoBadge
-          icon={<AiOutlineLink />}
-          text="사용해보기"
-          bgColor="#20c997"
-          txtColor="white"
-        />
-      </LinkStyle>
+      <IcoBadge
+        icon={<AiFillGithub />}
+        text="Front-End"
+        bgColor="#373737"
+        txtColor="white"
+        onClick={workLinks.gotoFrontRepo}
+      />
+
+      <IcoBadge
+        icon={<AiFillGithub />}
+        text="Back-End"
+        bgColor="#373737"
+        txtColor="white"
+        onClick={workLinks.gotoBackRepo}
+      />
+      <IcoBadge
+        icon={<AiOutlineLink />}
+        text="사용해보기"
+        bgColor="#20c997"
+        txtColor="white"
+        onClick={workLinks.gotoWorkLink}
+      />
     </LinksStyle>
   );
 }
