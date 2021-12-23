@@ -44,10 +44,8 @@ function TxtIntroduceMsg1() {
       <NormalTextStyle delayTime={1.4}>
         지속적인 발전을 중시하는
       </NormalTextStyle>
-      <StrongTextStyle delayTime={2.3}>
-        프론트엔드 개발자 지망생
-      </StrongTextStyle>
-      <NormalTextStyle delayTime={3.2}>인사드립니다 :)</NormalTextStyle>
+      <StrongTextStyle delayTime={2.3}>프론트엔드 개발자</StrongTextStyle>
+      <NormalTextStyle delayTime={3.1}>인사드립니다 :)</NormalTextStyle>
     </LayoutStyle>
   );
 }
