@@ -5,9 +5,9 @@ export const LayoutStyle = styled.div`
   flex-direction: column;
   align-itmes: center;
   justify-content: center;
-  width: 682px;
+  width: 470px;
   @media screen and (max-width: 700px) {
-    width: 234px;
+    width: 250px;
   }
 `;
 

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const NormalTextStyle = styled.div`
   display: flex;
-  flex-direction: column;
   font-size: 35px;
   font-family: NanumSquareL;
 

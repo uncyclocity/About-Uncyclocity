@@ -1,5 +1,5 @@
-import SkillsStrongAndUsing from "../organisms/SkillsStrongAndUsing";
+import Skills from "../organisms/Skills";
 
 export default function TmplSkills() {
-  return <SkillsStrongAndUsing />;
+  return <Skills />;
 }

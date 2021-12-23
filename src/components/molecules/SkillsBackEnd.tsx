@@ -1,39 +1,28 @@
-import {
-  SiTypescript,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-} from "react-icons/si";
+import { SiExpress, SiMongodb, SiNodedotjs } from "react-icons/si";
 import IcoBadge from "../atoms/badge/IcoBadge";
-import TxtSkillsUsing from "../atoms/text/TxtSkillsUsing";
+import TxtSkillsBackEnd from "../atoms/text/TxtSkillsBackEnd";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
-export default function SkillsUsings() {
+export default function SkillsBackEnd() {
   return (
     <LayoutStyle>
-      <TxtSkillsUsing />
+      <TxtSkillsBackEnd />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoBadge
-            icon={<SiTypescript />}
-            text="TypeScript"
-            bgColor="#3178C6"
-            txtColor="white"
-          />
           <IcoBadge
             icon={<SiNodedotjs />}
             text="Node.js"
             bgColor="#339933"
             txtColor="white"
           />
-        </IcoStyle>
-        <IcoStyle>
           <IcoBadge
             icon={<SiExpress />}
             text="Express"
             bgColor="#000000"
             txtColor="white"
           />
+        </IcoStyle>
+        <IcoStyle>
           <IcoBadge
             icon={<SiMongodb />}
             text="MongoDB"

@@ -1,39 +1,28 @@
-import {
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiStyledcomponents,
-} from "react-icons/si";
+import { SiReact, SiNextdotjs, SiStyledcomponents } from "react-icons/si";
 import IcoBadge from "../atoms/badge/IcoBadge";
-import TxtSkillsStrong from "../atoms/text/TxtSkillsStrong";
+import TxtSkillsFrontEnd from "../atoms/text/TxtSkillsFrontEnd";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
-export default function SkillsStrongs() {
+export default function SkillsFrontEnd() {
   return (
     <LayoutStyle>
-      <TxtSkillsStrong />
+      <TxtSkillsFrontEnd />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoBadge
-            icon={<SiJavascript />}
-            text="JavaScript"
-            bgColor="#F7DF1E"
-            txtColor="black"
-          />
           <IcoBadge
             icon={<SiReact />}
             text="React"
             bgColor="#61DAFB"
             txtColor="black"
           />
-        </IcoStyle>
-        <IcoStyle>
           <IcoBadge
             icon={<SiNextdotjs />}
             text="Next.js"
             bgColor="#000000"
             txtColor="white"
           />
+        </IcoStyle>
+        <IcoStyle>
           <IcoBadge
             icon={<SiStyledcomponents />}
             text="Styled-Components"

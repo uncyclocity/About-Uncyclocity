@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
 import { SlideLeft } from "../../styles/keyframes/slide";
-import SkillsStrongs from "../molecules/SkillsStrongs";
-import SkillsUseds from "../molecules/SkillsUseds";
-import SkillsUsings from "../molecules/SkillsUsings";
+import SkillsDevOps from "../molecules/SkillsDevOps";
+import SkillsLanguage from "../molecules/SkillsLanguage";
+import SkillsBackEnd from "../molecules/SkillsBackEnd";
+import SkillsFrontEnd from "../molecules/SkillsFrontEnd";
 
 const Styles = styled.div`
   display: flex;
@@ -30,17 +31,20 @@ const ViewAnimation = styled.div`
   opacity: 0;
 `;
 
-export default function SkillsStrongAndUsing() {
+export default function Skills() {
   return (
     <Styles>
       <ViewAnimation delayTime={0.2}>
-        <SkillsStrongs />
+        <SkillsLanguage />
       </ViewAnimation>
       <ViewAnimation delayTime={0.4}>
-        <SkillsUsings />
+        <SkillsFrontEnd />
       </ViewAnimation>
       <ViewAnimation delayTime={0.6}>
-        <SkillsUseds />
+        <SkillsBackEnd />
+      </ViewAnimation>
+      <ViewAnimation delayTime={0.8}>
+        <SkillsDevOps />
       </ViewAnimation>
     </Styles>
   );
