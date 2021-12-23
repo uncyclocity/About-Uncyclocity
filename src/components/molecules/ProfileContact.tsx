@@ -1,7 +1,7 @@
 import { BsFillPhoneFill } from "react-icons/bs";
 import { IoIosSend } from "react-icons/io";
 import styled from "styled-components";
-import IcoProfileContact from "../atoms/icon/IcoProfileContact";
+import IcoProfileContact from "../atoms/badge/IcoProfileContact";
 import TxtProfileContact from "../atoms/text/TxtProfileContact";
 
 const LayoutStyle = styled.div`
@@ -35,7 +35,7 @@ const Styles = styled.div`
     width: 260px;
     & {
       margin-right: 0px;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
   }
 `;

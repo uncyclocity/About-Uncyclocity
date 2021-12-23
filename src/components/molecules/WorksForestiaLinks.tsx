@@ -1,6 +1,6 @@
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import styled from "styled-components";
-import IcoBadge from "../atoms/icon/IcoBadge";
+import IcoBadge from "../atoms/badge/IcoBadge";
 
 const LinksStyle = styled.div`
   display: flex;

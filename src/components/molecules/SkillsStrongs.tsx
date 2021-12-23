@@ -4,7 +4,7 @@ import {
   SiNextdotjs,
   SiStyledcomponents,
 } from "react-icons/si";
-import IcoBadge from "../atoms/icon/IcoBadge";
+import IcoBadge from "../atoms/badge/IcoBadge";
 import TxtSkillsStrong from "../atoms/text/TxtSkillsStrong";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 

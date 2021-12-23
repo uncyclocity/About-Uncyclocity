@@ -1,5 +1,5 @@
 import { SiAndroidstudio, SiFirebase, SiMysql } from "react-icons/si";
-import IcoBadge from "../atoms/icon/IcoBadge";
+import IcoBadge from "../atoms/badge/IcoBadge";
 import TxtSkillsUsed from "../atoms/text/TxtSkillsUsed";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 

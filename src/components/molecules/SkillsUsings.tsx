@@ -4,7 +4,7 @@ import {
   SiExpress,
   SiMongodb,
 } from "react-icons/si";
-import IcoBadge from "../atoms/icon/IcoBadge";
+import IcoBadge from "../atoms/badge/IcoBadge";
 import TxtSkillsUsing from "../atoms/text/TxtSkillsUsing";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 

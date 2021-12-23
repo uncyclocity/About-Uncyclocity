@@ -30,9 +30,11 @@ const InfosStyle = styled.div`
 export default function ProfileInfos({
   gotoGithub,
   gotoVelog,
+  gotoRocketPunch,
 }: {
   gotoGithub: () => void;
   gotoVelog: () => void;
+  gotoRocketPunch: () => void;
 }) {
   return (
     <LayoutStyle>
@@ -40,7 +42,11 @@ export default function ProfileInfos({
       <InfosStyle>
         <ProfileInfo />
         <ProfileContact />
-        <ProfileLink gotoGithub={gotoGithub} gotoVelog={gotoVelog} />
+        <ProfileLink
+          gotoGithub={gotoGithub}
+          gotoVelog={gotoVelog}
+          gotoRocketPunch={gotoRocketPunch}
+        />
       </InfosStyle>
     </LayoutStyle>
   );
