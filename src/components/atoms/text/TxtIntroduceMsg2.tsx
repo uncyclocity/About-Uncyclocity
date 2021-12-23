@@ -31,9 +31,9 @@ function TxtIntroduceMsg1() {
       <NormalTextStyle>
         저는 이전부터 Front-End 분야에 큰 관심이 생겨
       </NormalTextStyle>
-      <NormalTextStyle>꾸준히 학습하고 이를 정리해왔습니다.</NormalTextStyle>
+      <NormalTextStyle>꾸준히 학습하고 이를 정리해왔으며</NormalTextStyle>
       <NormalTextStyle>
-        그리고 React와 Next.js를 통해 다양한 프로젝트를 진행해왔습니다.
+        React와 Next.js를 통해 다양한 프로젝트를 진행해왔습니다.
       </NormalTextStyle>
       <br />
       <NormalTextStyle>이제는 그동안 애정을 갖고 키워 온</NormalTextStyle>
