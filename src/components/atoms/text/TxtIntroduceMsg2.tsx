@@ -38,7 +38,7 @@ function TxtIntroduceMsg1() {
       <br />
       <NormalTextStyle>이제는 그동안 애정을 갖고 키워 온</NormalTextStyle>
       <NormalTextStyle>
-        Front-End 개발자로서의 새로운 경험을 쌓아 나가고자 합니다.
+        Front-End 개발자의 꿈을 새로운 경험으로 실현시키고자 합니다.
       </NormalTextStyle>
     </div>
   );
