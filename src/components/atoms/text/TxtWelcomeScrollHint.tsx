@@ -11,9 +11,7 @@ const Styles = styled.div`
   }
 `;
 
-export default function TxtWelcomeScrollHint() {
-  const { mQuery } = useSampleState();
-
+export default function TxtWelcomeScrollHint({ mQuery }: { mQuery: boolean }) {
   if (mQuery) {
     return <Styles>하단의 버튼으로 페이지를 넘겨 보세요 ;)</Styles>;
   } else {

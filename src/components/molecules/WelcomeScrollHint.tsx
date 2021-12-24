@@ -12,10 +12,10 @@ const Styles = styled.div`
   animation-fill-mode: forwards;
 `;
 
-export default function WelcomeScrollHint() {
+export default function WelcomeScrollHint({ mQuery }: { mQuery: boolean }) {
   return (
     <Styles>
-      <TxtWelcomeScrollHint />
+      <TxtWelcomeScrollHint mQuery={mQuery} />
     </Styles>
   );
 }

@@ -24,12 +24,16 @@ const Styles = styled.div`
   }
 `;
 
-export default function WelcomeTxtAndProfilePhoto() {
+export default function WelcomeTxtAndProfilePhoto({
+  mQuery,
+}: {
+  mQuery: boolean;
+}) {
   return (
     <Styles>
       <ImgProfileImage />
       <TxtWelcomeMsg />
-      <WelcomeScrollHint />
+      <WelcomeScrollHint mQuery={mQuery} />
     </Styles>
   );
 }
