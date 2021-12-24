@@ -1,6 +1,6 @@
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import styled from "styled-components";
-import IcoBadge from "../atoms/badge/IcoBadge";
+import BgeBadge from "../atoms/badge/BgeBadge";
 
 const LinksStyle = styled.div`
   display: flex;
@@ -17,23 +17,21 @@ export default function WorksForestiaLinks({
 }) {
   return (
     <LinksStyle>
-      <IcoBadge
+      <BgeBadge
         icon={<AiFillGithub />}
         text="Front-End"
         bgColor="#373737"
         txtColor="white"
         onClick={workLinks.gotoFrontRepo}
       />
-
-      <IcoBadge
+      <BgeBadge
         icon={<AiFillGithub />}
         text="Back-End"
         bgColor="#373737"
         txtColor="white"
         onClick={workLinks.gotoBackRepo}
       />
-
-      <IcoBadge
+      <BgeBadge
         icon={<AiOutlineLink />}
         text="사용해보기"
         bgColor="#20c997"

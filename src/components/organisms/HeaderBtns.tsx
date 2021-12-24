@@ -3,7 +3,6 @@ import { BsGithub } from "react-icons/bs";
 import { IoIosCall } from "react-icons/io";
 import styled from "styled-components";
 import BtnHeader from "../atoms/button/BtnHeader";
-import { useSampleState } from "../context/pageContext";
 import HeaderPopupCall from "../molecules/HeaderPopupCall";
 import HeaderPopupEmail from "../molecules/HeaderPopupEmail";
 import HeaderPopupGithubLink from "../molecules/HeaderPopupGithubLink";
@@ -23,33 +22,32 @@ const BtnsStyle = styled.div``;
 
 export default function HeaderBtns({
   headerHover,
-  setHeaderHover,
   headerClick,
   headerClickMobile,
-}: {
-  headerHover: HeaderHover;
-  setHeaderHover: (key: string, value: boolean) => void;
-  headerClick: HeaderClick;
-  headerClickMobile: HeaderClick;
-}) {
-  const { mQuery } = useSampleState();
-
+  headerSetHover,
+  mQuery,
+  dispatch,
+}: HeaderProps) {
   return (
     <LayoutStyle>
       <BtnsStyle>
         {mQuery ? (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.githubLink}
+            headerSetHover={headerSetHover}
             btnKind="githubLink"
             icon={<BsGithub />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         ) : (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClick.githubLink}
+            headerSetHover={headerSetHover}
             btnKind="githubLink"
             icon={<BsGithub />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         )}
         {headerHover.githubLink && <HeaderPopupGithubLink />}
@@ -57,17 +55,21 @@ export default function HeaderBtns({
       <BtnsStyle>
         {mQuery ? (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.call}
+            headerSetHover={headerSetHover}
             btnKind="call"
             icon={<IoIosCall />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         ) : (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClick.call}
+            headerSetHover={headerSetHover}
             btnKind="call"
             icon={<IoIosCall />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         )}
         {headerHover.call && <HeaderPopupCall />}
@@ -75,17 +77,21 @@ export default function HeaderBtns({
       <BtnsStyle>
         {mQuery ? (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClickMobile.email}
+            headerSetHover={headerSetHover}
             btnKind="email"
             icon={<AiTwotoneMail />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         ) : (
           <BtnHeader
-            setHeaderHover={setHeaderHover}
             onClick={headerClick.email}
+            headerSetHover={headerSetHover}
             btnKind="email"
             icon={<AiTwotoneMail />}
+            mQuery={mQuery}
+            dispatch={dispatch}
           />
         )}
         {headerHover.email && <HeaderPopupEmail />}

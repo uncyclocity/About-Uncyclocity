@@ -1,7 +1,7 @@
 import { SiGithub, SiVimeo } from "react-icons/si";
 import { RiRocket2Line } from "react-icons/ri";
 import styled from "styled-components";
-import IcoBadge from "../atoms/badge/IcoBadge";
+import BgeBadge from "../atoms/badge/BgeBadge";
 import { useSampleState } from "../context/pageContext";
 
 const LayoutStyle = styled.div`
@@ -43,14 +43,14 @@ export default function ProfileLink({
     return (
       <MobileLayoutStyle>
         <MobileFloorStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<SiGithub />}
             text="uncyclocity"
             bgColor="#404040"
             txtColor="white"
             onClick={gotoGithub}
           />
-          <IcoBadge
+          <BgeBadge
             icon={<SiVimeo />}
             text="uncyclocity.log"
             bgColor="#20c997"
@@ -59,7 +59,7 @@ export default function ProfileLink({
           />
         </MobileFloorStyle>
         <MobileFloorStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<RiRocket2Line />}
             text="로켓펀치/이성범"
             bgColor="#4e60ff"
@@ -72,21 +72,21 @@ export default function ProfileLink({
   } else {
     return (
       <LayoutStyle>
-        <IcoBadge
+        <BgeBadge
           icon={<SiGithub />}
           text="uncyclocity"
           bgColor="#404040"
           txtColor="white"
           onClick={gotoGithub}
         />
-        <IcoBadge
+        <BgeBadge
           icon={<SiVimeo />}
           text="uncyclocity.log"
           bgColor="#20c997"
           txtColor="white"
           onClick={gotoVelog}
         />
-        <IcoBadge
+        <BgeBadge
           icon={<RiRocket2Line />}
           text="로켓펀치/이성범"
           bgColor="#4e60ff"

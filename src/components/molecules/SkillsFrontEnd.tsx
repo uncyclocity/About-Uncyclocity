@@ -1,5 +1,5 @@
 import { SiReact, SiNextdotjs, SiStyledcomponents } from "react-icons/si";
-import IcoBadge from "../atoms/badge/IcoBadge";
+import BgeBadge from "../atoms/badge/BgeBadge";
 import TxtSkillsFrontEnd from "../atoms/text/TxtSkillsFrontEnd";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
@@ -9,13 +9,13 @@ export default function SkillsFrontEnd() {
       <TxtSkillsFrontEnd />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<SiReact />}
             text="React"
             bgColor="#61DAFB"
             txtColor="black"
           />
-          <IcoBadge
+          <BgeBadge
             icon={<SiNextdotjs />}
             text="Next.js"
             bgColor="#000000"
@@ -23,7 +23,7 @@ export default function SkillsFrontEnd() {
           />
         </IcoStyle>
         <IcoStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<SiStyledcomponents />}
             text="Styled-Components"
             bgColor="#DB7093"

@@ -1,5 +1,5 @@
 import { SiExpress, SiMongodb, SiNodedotjs } from "react-icons/si";
-import IcoBadge from "../atoms/badge/IcoBadge";
+import BgeBadge from "../atoms/badge/BgeBadge";
 import TxtSkillsBackEnd from "../atoms/text/TxtSkillsBackEnd";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
@@ -9,13 +9,13 @@ export default function SkillsBackEnd() {
       <TxtSkillsBackEnd />
       <IcoLinesStyle>
         <IcoStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<SiNodedotjs />}
             text="Node.js"
             bgColor="#339933"
             txtColor="white"
           />
-          <IcoBadge
+          <BgeBadge
             icon={<SiExpress />}
             text="Express"
             bgColor="#000000"
@@ -23,7 +23,7 @@ export default function SkillsBackEnd() {
           />
         </IcoStyle>
         <IcoStyle>
-          <IcoBadge
+          <BgeBadge
             icon={<SiMongodb />}
             text="MongoDB"
             bgColor="#47A248"
