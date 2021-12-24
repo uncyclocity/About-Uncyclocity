@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useSampleState } from "../../context/pageContext";
 
 const Styles = styled.div`
   font-size: 25px;
@@ -22,22 +21,28 @@ const Styles = styled.div`
 `;
 
 export default function BtnHeader({
-  setHeaderHover,
   onClick,
+  headerSetHover,
   btnKind,
   icon,
+  mQuery,
+  dispatch,
 }: {
-  setHeaderHover: (key: string, value: boolean) => void;
   onClick: () => void;
+  headerSetHover: (dispatch: any, objProp: any) => void;
   btnKind: string;
   icon: React.ReactNode;
+  mQuery: boolean;
+  dispatch: any;
 }) {
-  const { mQuery } = useSampleState();
-
   return (
     <Styles
-      onMouseEnter={() => !mQuery && setHeaderHover(btnKind, true)}
-      onMouseLeave={() => !mQuery && setHeaderHover(btnKind, false)}
+      onMouseEnter={() =>
+        !mQuery && headerSetHover(dispatch, { [btnKind]: true })
+      }
+      onMouseLeave={() =>
+        !mQuery && headerSetHover(dispatch, { [btnKind]: false })
+      }
       onClick={onClick}
     >
       {icon}

@@ -25,19 +25,21 @@ const Styles = styled.div`
 export default function BtnFooter({
   nowSlide,
   pageNum,
-  onClick,
   text,
+  pageChangeWork,
+  dispatch,
 }: {
   nowSlide: number;
   pageNum: number;
-  onClick: (slideNum: number) => void;
   text: string;
+  pageChangeWork: (slideNum: number, dispatch: any) => void;
+  dispatch: any;
 }) {
   return (
     <Styles
       nowSlide={nowSlide}
       pageNum={pageNum}
-      onClick={() => pageNum !== nowSlide && onClick(pageNum)}
+      onClick={() => pageNum !== nowSlide && pageChangeWork(pageNum, dispatch)}
     >
       {text}
     </Styles>

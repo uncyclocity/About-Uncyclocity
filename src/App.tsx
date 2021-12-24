@@ -14,12 +14,20 @@ import Works from "./components/pages/Works";
 import TmplFooter from "./components/templates/TmplFooter";
 import TmplHeader from "./components/templates/TmplHeader";
 import { theme } from "./styles/theme";
+import {
+  headerClickMQuery,
+  headerCopy,
+  headerGoWebSite,
+  headerSetHover,
+} from "./utils/headerWorks";
+import { pageChange, pageChangeWork } from "./utils/pageChangeWorks";
 
 export default function App() {
   const outerDivRef = useRef<HTMLDivElement>(null);
   const {
     nowSlide,
     headerHover,
+    mQuery,
   }: { nowSlide: number; headerHover: HeaderHover; mQuery: boolean } =
     useSampleState();
   const dispatch = useSampleDispatch();
@@ -29,7 +37,7 @@ export default function App() {
     setViewText,
   }: { viewText: string; setViewText: (text: string) => void } = useSnackBar();
 
-  const screenChange = (e: MediaQueryListEvent) => {
+  const screenSizeChange = (e: MediaQueryListEvent) => {
     const matches = e.matches;
     dispatch({
       type: "SET_MQUERY",
@@ -37,117 +45,72 @@ export default function App() {
     });
   };
 
-  const pageChangeworks = useCallback(
-    (slideNum: number) => {
-      dispatch({ type: "SET_ANIMATION", state: true });
-      setTimeout(() => {
-        dispatch({ type: "SET_ANIMATION", state: false });
-        dispatch({ type: "SET_NOWSLIDE", state: slideNum });
-      }, 350);
-    },
-    [dispatch]
+  const setPageChange = useCallback(
+    (e: any) => pageChange({ e, dispatch, timer, nowSlide }),
+    [dispatch, nowSlide]
   );
-
-  const toSetEnablePageChange = () => {
-    clearTimeout(timer.current);
-    timer.current = null;
-  };
-
-  const pageChange = useCallback(
-    (e: any) => {
-      if (!timer.current) {
-        e.preventDefault();
-        const { deltaY } = e;
-        if (deltaY > 0 && nowSlide < 4) {
-          pageChangeworks(nowSlide + 1);
-        } else if (deltaY < 0 && nowSlide > 0) {
-          pageChangeworks(nowSlide - 1);
-        }
-        timer.current = setTimeout(() => {
-          toSetEnablePageChange();
-        }, 250);
-      } else {
-        clearTimeout(timer.current);
-        timer.current = setTimeout(() => {
-          toSetEnablePageChange();
-        }, 250);
-      }
-    },
-    [nowSlide, pageChangeworks]
-  );
-
-  const setHeaderHover = (key: string, value: boolean) => {
-    dispatch({ type: "SET_HOVER", key, value });
-  };
 
   const headerClick: HeaderClick = {
     githubLink: () => {
-      const githubUrl = "https://github.com/uncyclocity";
-      window.open(githubUrl, "_blank");
+      headerGoWebSite("https://github.com/uncyclocity");
     },
     call: () => {
-      const phoneNum = "+82 10-2610-3861";
-      navigator.clipboard.writeText(phoneNum);
+      headerCopy("+82 10-2610-3861");
       setViewText("전화번호가 클립보드에 복사되었습니다.");
     },
     email: () => {
-      const emailUrl = "seongbeom_lee@kakao.com";
-      navigator.clipboard.writeText(emailUrl);
+      headerCopy("seongbeom_lee@kakao.com");
       setViewText("이메일 주소가 클립보드에 복사되었습니다.");
     },
   };
 
   const headerClickMobile: HeaderClick = {
-    githubLink: (e) => {
-      const ref = e.target;
-      setHeaderHover("githubLink", true);
-      ref.addEventListener("click", headerClick.githubLink);
-      setTimeout(() => {
-        setHeaderHover("githubLink", false);
-        ref.removeEventListener("click", headerClick.githubLink);
-      }, 2000);
-    },
-    call: (e: any) => {
-      const ref = e.target;
-      setHeaderHover("call", true);
-      ref.addEventListener("click", headerClick.call);
-      setTimeout(() => {
-        setHeaderHover("call", false);
-        ref.removeEventListener("click", headerClick.call);
-      }, 2000);
-    },
-    email: (e: any) => {
-      const ref = e.target;
-      setHeaderHover("email", true);
-      ref.addEventListener("click", headerClick.email);
-      setTimeout(() => {
-        setHeaderHover("email", false);
-        ref.removeEventListener("click", headerClick.email);
-      }, 2000);
-    },
+    githubLink: (e: any) =>
+      headerClickMQuery({
+        e,
+        dispatch,
+        objPropKey: "githubLink",
+        headerClick: headerClick.githubLink,
+      }),
+    call: (e: any) =>
+      headerClickMQuery({
+        e,
+        dispatch,
+        objPropKey: "call",
+        headerClick: headerClick.call,
+      }),
+    email: (e: any) =>
+      headerClickMQuery({
+        e,
+        dispatch,
+        objPropKey: "email",
+        headerClick: headerClick.email,
+      }),
   };
 
   useEffect(() => {
     const outerDivRefCurrent = outerDivRef.current;
-    outerDivRefCurrent?.addEventListener("wheel", pageChange);
+    outerDivRefCurrent?.addEventListener("wheel", setPageChange);
     return () => {
-      outerDivRefCurrent?.removeEventListener("wheel", pageChange);
+      outerDivRefCurrent?.removeEventListener("wheel", setPageChange);
     };
-  }, [pageChange]);
+  }, [setPageChange]);
 
   useEffect(() => {
     const mql = window.matchMedia("screen and (max-width:700px)");
-    mql.addEventListener("change", screenChange);
-    return () => mql.removeEventListener("change", screenChange);
+    mql.addEventListener("change", screenSizeChange);
+    return () => mql.removeEventListener("change", screenSizeChange);
   });
 
   return (
     <ThemeProvider theme={theme}>
       <TmplHeader
         headerHover={headerHover}
-        setHeaderHover={setHeaderHover}
         headerClick={headerClick}
         headerClickMobile={headerClickMobile}
+        headerSetHover={headerSetHover}
+        mQuery={mQuery}
+        dispatch={dispatch}
       />
       <div ref={outerDivRef} className="outer">
         {nowSlide === 0 && <Welcome />}
@@ -157,7 +120,11 @@ export default function App() {
         {nowSlide === 4 && <Works />}
         {viewText && <SnackBar text={viewText} />}
       </div>
-      <TmplFooter nowSlide={nowSlide} onClick={pageChangeworks} />
+      <TmplFooter
+        nowSlide={nowSlide}
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
+      />
     </ThemeProvider>
   );
 }

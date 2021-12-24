@@ -11,14 +11,16 @@ const Styles = styled.div`
 
 export default function TmplFooter({
   nowSlide,
-  onClick,
-}: {
-  nowSlide: number;
-  onClick: (slideNum: number) => void;
-}) {
+  pageChangeWork,
+  dispatch,
+}: FooterProps) {
   return (
     <Styles>
-      <FooterBtns nowSlide={nowSlide} onClick={onClick} />
+      <FooterBtns
+        nowSlide={nowSlide}
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
+      />
     </Styles>
   );
 }

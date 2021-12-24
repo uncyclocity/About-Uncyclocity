@@ -14,42 +14,45 @@ const Styles = styled.div`
 
 export default function FooterBtns({
   nowSlide,
-  onClick,
-}: {
-  nowSlide: number;
-  onClick: (slideNum: number) => void;
-}) {
+  pageChangeWork,
+  dispatch,
+}: FooterProps) {
   return (
     <Styles>
       <BtnFooter
         nowSlide={nowSlide}
         pageNum={0}
-        onClick={onClick}
         text="WELCOME"
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
       />
       <BtnFooter
         nowSlide={nowSlide}
         pageNum={1}
-        onClick={onClick}
         text="PROFILE"
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
       />
       <BtnFooter
         nowSlide={nowSlide}
         pageNum={2}
-        onClick={onClick}
         text="INTRODUCE"
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
       />
       <BtnFooter
         nowSlide={nowSlide}
         pageNum={3}
-        onClick={onClick}
         text="SKILLS"
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
       />
       <BtnFooter
         nowSlide={nowSlide}
         pageNum={4}
-        onClick={onClick}
         text="WORKS"
+        pageChangeWork={pageChangeWork}
+        dispatch={dispatch}
       />
     </Styles>
   );

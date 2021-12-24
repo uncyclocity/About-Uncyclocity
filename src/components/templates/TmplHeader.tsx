@@ -11,22 +11,21 @@ const Styles = styled.div`
 
 export default function TmplHeader({
   headerHover,
-  setHeaderHover,
   headerClick,
   headerClickMobile,
-}: {
-  headerHover: HeaderHover;
-  setHeaderHover: (key: string, value: boolean) => void;
-  headerClick: HeaderClick;
-  headerClickMobile: HeaderClick;
-}) {
+  headerSetHover,
+  mQuery,
+  dispatch,
+}: HeaderProps) {
   return (
     <Styles>
       <HeaderBtns
         headerHover={headerHover}
-        setHeaderHover={setHeaderHover}
         headerClick={headerClick}
         headerClickMobile={headerClickMobile}
+        headerSetHover={headerSetHover}
+        mQuery={mQuery}
+        dispatch={dispatch}
       />
     </Styles>
   );
