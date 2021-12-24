@@ -4,7 +4,7 @@ import {
   useSampleDispatch,
   useSampleState,
 } from "./components/context/pageContext";
-import useSnackBar from "./components/utils/useSnackBar";
+import useSnackBar from "./hooks/useSnackBar";
 import SnackBar from "./components/organisms/SnackBar";
 import Introduce from "./components/pages/Introduce";
 import Profile from "./components/pages/Profile";

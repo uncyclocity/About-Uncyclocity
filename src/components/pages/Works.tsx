@@ -1,6 +1,6 @@
 import TmplWorks from "../templates/TmplWorks";
 import PageStyle from "./PageStyle";
-import useSlide from "../utils/useSlide";
+import useSlide from "../../hooks/useSlide";
 
 export default function Works() {
   const { slideNum, slideNumSetter, maxPageNum } = useSlide(2);
