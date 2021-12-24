@@ -52,7 +52,7 @@ const TextStyle = styled.div`
   }
 `;
 
-export default function IcoBadge({
+export default function BgeBadge({
   icon,
   text,
   bgColor,
@@ -87,6 +87,6 @@ export default function IcoBadge({
   }
 }
 
-IcoBadge.defaultProps = {
+BgeBadge.defaultProps = {
   onClick: null,
 };

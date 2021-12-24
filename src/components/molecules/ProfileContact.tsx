@@ -1,7 +1,7 @@
 import { BsFillPhoneFill } from "react-icons/bs";
 import { IoIosSend } from "react-icons/io";
 import styled from "styled-components";
-import IcoProfileContact from "../atoms/badge/IcoProfileContact";
+import IcoProfileContact from "../atoms/icon/IcoProfileContact";
 import TxtProfileContact from "../atoms/text/TxtProfileContact";
 
 const LayoutStyle = styled.div`
