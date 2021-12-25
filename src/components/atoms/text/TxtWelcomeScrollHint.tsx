@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useSampleState } from "../../context/pageContext";
 
 const Styles = styled.div`
   font-size: 17px;
