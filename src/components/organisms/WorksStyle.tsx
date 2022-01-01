@@ -16,6 +16,7 @@ const Styles = styled.div`
   @media screen and (max-width: 700px) {
     width: 80vw;
     height: 75vh;
+    min-height: 470px;
     margin: 1.5vh 0;
   }
 `;
