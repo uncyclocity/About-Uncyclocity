@@ -7,7 +7,7 @@ export const LayoutStyle = styled.div`
   justify-content: center;
   width: 470px;
   @media screen and (max-width: 700px) {
-    width: 250px;
+    width: 200px;
   }
 `;
 

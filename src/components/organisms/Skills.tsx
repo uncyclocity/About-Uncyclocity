@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { SlideLeft } from "../../styles/keyframes/slide";
-import SkillsDevOps from "../molecules/SkillsDevOps";
 import SkillsLanguage from "../molecules/SkillsLanguage";
 import SkillsBackEnd from "../molecules/SkillsBackEnd";
 import SkillsFrontEnd from "../molecules/SkillsFrontEnd";
@@ -42,9 +41,6 @@ export default function Skills() {
       </ViewAnimation>
       <ViewAnimation delayTime={0.6}>
         <SkillsBackEnd />
-      </ViewAnimation>
-      <ViewAnimation delayTime={0.8}>
-        <SkillsDevOps />
       </ViewAnimation>
     </Styles>
   );
