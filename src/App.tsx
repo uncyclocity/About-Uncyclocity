@@ -21,6 +21,7 @@ import {
   headerSetHover,
 } from "./utils/headerWorks";
 import { pageChange, pageChangeWork } from "./utils/pageChangeWorks";
+import { screenSizeChange } from "./utils/screenSizeWorks";
 
 export default function App() {
   const outerDivRef = useRef<HTMLDivElement>(null);
@@ -37,13 +38,10 @@ export default function App() {
     setViewText,
   }: { viewText: string; setViewText: (text: string) => void } = useSnackBar();
 
-  const screenSizeChange = (e: MediaQueryListEvent) => {
-    const matches = e.matches;
-    dispatch({
-      type: "SET_MQUERY",
-      state: matches,
-    });
-  };
+  const setScreenSizeChange = useCallback(
+    (e: MediaQueryListEvent) => screenSizeChange({ e, dispatch }),
+    [dispatch]
+  );
 
   const setPageChange = useCallback(
     (e: any) => pageChange({ e, dispatch, timer, nowSlide }),
@@ -98,8 +96,8 @@ export default function App() {
 
   useEffect(() => {
     const mql = window.matchMedia("screen and (max-width:700px)");
-    mql.addEventListener("change", screenSizeChange);
-    return () => mql.removeEventListener("change", screenSizeChange);
+    mql.addEventListener("change", setScreenSizeChange);
+    return () => mql.removeEventListener("change", setScreenSizeChange);
   });
 
   return (
