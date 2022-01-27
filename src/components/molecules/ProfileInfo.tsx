@@ -28,9 +28,14 @@ export default function ProfileInfo() {
         term="2018. 03 ~ 2021. 01"
       />
       <TxtProfileInfo
-        title="경력"
+        title="경력 1"
         text="쉬프트정보통신(주) UI/UX 프레임워크 개발자"
-        term="2020. 11 ~"
+        term="2020. 11 ~ 2022. 02"
+      />
+      <TxtProfileInfo
+        title="경력 2"
+        text="(주)위플래닛 웹 프론트엔드 개발자"
+        term="2022. 02 ~"
       />
       <TxtProfileInfo
         title="병역"

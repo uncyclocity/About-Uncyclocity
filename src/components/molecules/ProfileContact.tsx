@@ -15,7 +15,7 @@ const LayoutStyle = styled.div`
     flex-direction: column;
     margin-left: 0px;
     margin: 15px 0;
-    width: 100%;
+    width: 260px;
   }
 `;
 
@@ -35,7 +35,7 @@ const Styles = styled.div`
     width: 260px;
     & {
       margin-right: 0px;
-      margin-bottom: 7px;
+      margin-bottom: 4px;
     }
   }
 `;

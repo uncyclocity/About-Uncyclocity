@@ -10,8 +10,8 @@ const IconBgStyle = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 700px) {
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
   }
 `;
 
@@ -25,7 +25,7 @@ const IconStyle = styled.div`
   }
 
   @media screen and (max-width: 700px) {
-    font-size: 23px;
+    font-size: 20px;
     height: 23px;
   }
 `;

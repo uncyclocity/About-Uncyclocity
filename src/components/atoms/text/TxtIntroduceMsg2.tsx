@@ -16,13 +16,13 @@ const NormalTextStyle = styled.div`
 function TxtIntroduceMsg1() {
   return (
     <div>
-      <NormalTextStyle>프론트엔드 개발자를 준비하고 있는</NormalTextStyle>
+      <NormalTextStyle>웹 프론트엔드 개발자를 준비중인</NormalTextStyle>
       <NormalTextStyle>SW 마이스터고 졸업생입니다.</NormalTextStyle>
       <NormalTextStyle>
-        현재는 판교 테크노밸리 UI/UX 프레임워크 업체 소속의
+        현재는 WEPLANET의 웹 프론트엔드 개발자로
       </NormalTextStyle>
       <NormalTextStyle>
-        현역 산업기능요원으로서 복무 중에 있습니다.
+        커리어를 시작하기 위한 준비 중에 있습니다.
       </NormalTextStyle>
       <br />
       <NormalTextStyle>
@@ -36,9 +36,11 @@ function TxtIntroduceMsg1() {
         React와 Next.js를 통해 다양한 프로젝트를 진행해왔습니다.
       </NormalTextStyle>
       <br />
-      <NormalTextStyle>이제는 저의 Front-End 개발자의 꿈을</NormalTextStyle>
       <NormalTextStyle>
-        실무에서의 새로운 경험으로 실현시키고자 합니다.
+        향후 Front-End 시니어 개발자의 꿈을 실현시키기 위해
+      </NormalTextStyle>
+      <NormalTextStyle>
+        새로운 배움에 대해 항상 적극적으로 임하고자 합니다.
       </NormalTextStyle>
     </div>
   );
