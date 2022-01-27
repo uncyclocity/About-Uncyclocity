@@ -1,12 +1,11 @@
-import { SiGithub, SiVimeo } from "react-icons/si";
-import { RiRocket2Line } from "react-icons/ri";
+import { SiGithub, SiNotion, SiVimeo } from "react-icons/si";
 import styled from "styled-components";
 import BgeBadge from "../atoms/badge/BgeBadge";
 import { useSampleState } from "../context/pageContext";
 
 const LayoutStyle = styled.div`
   display: flex;
-  width: 500px;
+  width: 610px;
   margin: 20px 0;
   justify-content: space-between;
 `;
@@ -31,11 +30,11 @@ const MobileFloorStyle = styled.div`
 export default function ProfileLink({
   gotoGithub,
   gotoVelog,
-  gotoRocketPunch,
+  gotoNotion,
 }: {
   gotoGithub: () => void;
   gotoVelog: () => void;
-  gotoRocketPunch: () => void;
+  gotoNotion: () => void;
 }) {
   const { mQuery } = useSampleState();
 
@@ -60,11 +59,11 @@ export default function ProfileLink({
         </MobileFloorStyle>
         <MobileFloorStyle>
           <BgeBadge
-            icon={<RiRocket2Line />}
-            text="로켓펀치/이성범"
-            bgColor="#4e60ff"
+            icon={<SiNotion />}
+            text="이성범/내일이 더 발전된 개발자"
+            bgColor="#000000"
             txtColor="white"
-            onClick={gotoRocketPunch}
+            onClick={gotoNotion}
           />
         </MobileFloorStyle>
       </MobileLayoutStyle>
@@ -87,11 +86,11 @@ export default function ProfileLink({
           onClick={gotoVelog}
         />
         <BgeBadge
-          icon={<RiRocket2Line />}
-          text="로켓펀치/이성범"
-          bgColor="#4e60ff"
+          icon={<SiNotion />}
+          text="이성범/내일이 더 발전된 개발자"
+          bgColor="#000000"
           txtColor="white"
-          onClick={gotoRocketPunch}
+          onClick={gotoNotion}
         />
       </LayoutStyle>
     );

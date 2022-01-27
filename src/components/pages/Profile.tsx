@@ -4,7 +4,8 @@ import PageStyle from "./PageStyle";
 export default function Profile() {
   const githubUrl = "https://github.com/uncyclocity";
   const velogUrl = "https://velog.io/@uncyclocity";
-  const rocketPunchUrl = "https://www.rocketpunch.com/@dl2qja";
+  const notionUrl =
+    "https://axiomatic-booth-a1e.notion.site/fb3fe5045cdc4b10bf37c47df21394bc";
 
   const gotoSite: (url: string) => void = (url: string) => {
     window.open(url, "_blank");
@@ -15,7 +16,7 @@ export default function Profile() {
       <TmplProfile
         gotoGithub={() => gotoSite(githubUrl)}
         gotoVelog={() => gotoSite(velogUrl)}
-        gotoRocketPunch={() => gotoSite(rocketPunchUrl)}
+        gotoNotion={() => gotoSite(notionUrl)}
       />
     </PageStyle>
   );

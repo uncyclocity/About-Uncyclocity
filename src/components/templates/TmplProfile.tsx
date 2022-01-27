@@ -3,17 +3,17 @@ import ProfileInfos from "../organisms/ProfileInfos";
 export default function TmplProfile({
   gotoGithub,
   gotoVelog,
-  gotoRocketPunch,
+  gotoNotion,
 }: {
   gotoGithub: () => void;
   gotoVelog: () => void;
-  gotoRocketPunch: () => void;
+  gotoNotion: () => void;
 }) {
   return (
     <ProfileInfos
       gotoGithub={gotoGithub}
       gotoVelog={gotoVelog}
-      gotoRocketPunch={gotoRocketPunch}
+      gotoNotion={gotoNotion}
     />
   );
 }
