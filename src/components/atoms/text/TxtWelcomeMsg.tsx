@@ -6,8 +6,10 @@ import React from "react";
 const NormalTextStyle = styled.div`
   font-family: NanumSquareL;
   font-size: 60px;
+  width: 405px;
 
   @media screen and (max-width: 700px) {
+    width: 270px;
     font-size: 40px;
   }
 `;
