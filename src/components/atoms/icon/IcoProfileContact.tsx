@@ -30,7 +30,7 @@ const IconStyle = styled.div`
   }
 `;
 
-export default function IcoProfileContact({ icon }: { icon: any }) {
+export default function IcoProfileContact({ icon }: { icon: JSX.Element }) {
   return (
     <IconBgStyle>
       <IconStyle>{icon}</IconStyle>

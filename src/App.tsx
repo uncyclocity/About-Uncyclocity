@@ -44,7 +44,7 @@ export default function App() {
   );
 
   const setPageChange = useCallback(
-    (e: any) => pageChange({ e, dispatch, timer, nowSlide }),
+    (e: WheelEvent) => pageChange({ e, dispatch, timer, nowSlide }),
     [dispatch, nowSlide]
   );
 
@@ -63,21 +63,21 @@ export default function App() {
   };
 
   const headerClickMobile: HeaderClick = {
-    githubLink: (e: any) =>
+    githubLink: (e: MouseEvent) =>
       headerClickMQuery({
         e,
         dispatch,
         objPropKey: "githubLink",
         headerClick: headerClick.githubLink,
       }),
-    call: (e: any) =>
+    call: (e: MouseEvent) =>
       headerClickMQuery({
         e,
         dispatch,
         objPropKey: "call",
         headerClick: headerClick.call,
       }),
-    email: (e: any) =>
+    email: (e: MouseEvent) =>
       headerClickMQuery({
         e,
         dispatch,

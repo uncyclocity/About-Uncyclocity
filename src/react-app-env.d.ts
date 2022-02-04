@@ -48,7 +48,7 @@ type HeaderClickMQuery = {
 
 // 페이지 전환 시 호출되는 함수 pageChange에 전달되는 파라미터 객체
 type PageChange = {
-  e: any;
+  e: WheelEvent;
   dispatch: any;
   timer: any;
   nowSlide: number;
