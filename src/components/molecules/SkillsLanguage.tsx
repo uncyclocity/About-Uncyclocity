@@ -1,12 +1,12 @@
 import { SiJavascript, SiTypescript } from "react-icons/si";
 import BgeBadge from "../atoms/badge/BgeBadge";
-import TxtSkillsLanguage from "../atoms/text/TxtSkillsLanguage";
+import TxtSkillsTitle from "../atoms/text/TxtSkillsTitle";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
 export default function SkillsLanguage() {
   return (
     <LayoutStyle>
-      <TxtSkillsLanguage />
+      <TxtSkillsTitle text="Language" />
       <IcoLinesStyle>
         <IcoStyle>
           <BgeBadge

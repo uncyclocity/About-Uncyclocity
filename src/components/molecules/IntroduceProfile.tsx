@@ -32,7 +32,11 @@ export default function IntroduceProfile() {
       <CtnIntroduceProfile>
         <InnerStyle>
           <ImgProfileImage />
-          <TxtIntroduceNameAndNickname />
+          <TxtIntroduceNameAndNickname
+            name="이성범"
+            nickname="a.k.a. 백괴"
+            engNickname="@uncyclocity"
+          />
         </InnerStyle>
       </CtnIntroduceProfile>
     </OuterStyle>

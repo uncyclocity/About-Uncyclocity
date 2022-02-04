@@ -17,3 +17,18 @@ export const TxtHeaderPopupHintStyle = styled.div`
     font-size: 10px;
   }
 `;
+
+export default function TxtHeaderPopupCall({
+  main,
+  sub,
+}: {
+  main: string;
+  sub: string;
+}) {
+  return (
+    <TxtHeaderPopupStyle>
+      {main}
+      <TxtHeaderPopupHintStyle>{sub}</TxtHeaderPopupHintStyle>
+    </TxtHeaderPopupStyle>
+  );
+}

@@ -13,3 +13,11 @@ export const NormalTextStyle = styled.div`
 export const StrongTextStyle = styled.div`
   font-family: NanumSquareB;
 `;
+
+export default function TxtSkillsBackEnd({ text }: { text: string }) {
+  return (
+    <NormalTextStyle>
+      <StrongTextStyle>{text}</StrongTextStyle>
+    </NormalTextStyle>
+  );
+}

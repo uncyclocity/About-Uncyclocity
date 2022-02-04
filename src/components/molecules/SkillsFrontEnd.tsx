@@ -1,12 +1,12 @@
 import { SiReact, SiNextdotjs, SiStyledcomponents } from "react-icons/si";
 import BgeBadge from "../atoms/badge/BgeBadge";
-import TxtSkillsFrontEnd from "../atoms/text/TxtSkillsFrontEnd";
+import TxtSkillsTitle from "../atoms/text/TxtSkillsTitle";
 import { IcoLinesStyle, IcoStyle, LayoutStyle } from "./SkillsStyle";
 
 export default function SkillsFrontEnd() {
   return (
     <LayoutStyle>
-      <TxtSkillsFrontEnd />
+      <TxtSkillsTitle text="Front-End" />
       <IcoLinesStyle>
         <IcoStyle>
           <BgeBadge

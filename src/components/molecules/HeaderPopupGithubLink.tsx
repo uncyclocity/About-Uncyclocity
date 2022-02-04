@@ -1,10 +1,10 @@
 import CtnHoverPopup from "../atoms/container/CtnHoverPopup";
-import TxtHeaderPopupGithubLink from "../atoms/text/TxtHeaderPopupGithubLink";
+import TxtHeaderPopup from "../atoms/text/TxtHeaderPopup";
 
 export default function HeaderPopupGithubLink() {
   return (
     <CtnHoverPopup>
-      <TxtHeaderPopupGithubLink />
+      <TxtHeaderPopup main="@uncyclocity" sub="클릭하면 이동합니다" />
     </CtnHoverPopup>
   );
 }

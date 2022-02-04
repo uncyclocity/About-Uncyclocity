@@ -34,12 +34,20 @@ const EngNicknameStyle = styled.div`
   }
 `;
 
-export default function TxtIntroduceNameAndNickname() {
+export default function TxtIntroduceNameAndNickname({
+  name,
+  nickname,
+  engNickname,
+}: {
+  name: string;
+  nickname: string;
+  engNickname: string;
+}) {
   return (
     <LayoutStyle>
-      <NameStyle>이성범</NameStyle>
-      <NicknameStyle>a.k.a. 백괴</NicknameStyle>
-      <EngNicknameStyle>@uncyclocity</EngNicknameStyle>
+      <NameStyle>{name}</NameStyle>
+      <NicknameStyle>{nickname}</NicknameStyle>
+      <EngNicknameStyle>{engNickname}</EngNicknameStyle>
     </LayoutStyle>
   );
 }
