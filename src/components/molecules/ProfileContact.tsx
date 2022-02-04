@@ -14,7 +14,7 @@ const LayoutStyle = styled.div`
   @media screen and (max-width: 700px) {
     flex-direction: column;
     margin-left: 0px;
-    margin: 15px 0;
+    margin: 10px 0;
     width: 260px;
   }
 `;
