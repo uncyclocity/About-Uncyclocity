@@ -18,7 +18,7 @@ const InfosStyle = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-left: 50px;
-  width: 700px;
+  width: 710px;
 
   @media screen and (max-width: 700px) {
     align-items: center;

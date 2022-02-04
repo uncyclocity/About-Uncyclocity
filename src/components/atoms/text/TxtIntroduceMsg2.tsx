@@ -19,7 +19,7 @@ function TxtIntroduceMsg1() {
       <NormalTextStyle>웹 프론트엔드 개발자를 준비중인</NormalTextStyle>
       <NormalTextStyle>SW 마이스터고 졸업생입니다.</NormalTextStyle>
       <NormalTextStyle>
-        현재는 WEPLANET의 웹 프론트엔드 개발자로
+        현재는 WePlanet의 웹 프론트엔드 개발자로
       </NormalTextStyle>
       <NormalTextStyle>
         커리어를 시작하기 위한 준비 중에 있습니다.
