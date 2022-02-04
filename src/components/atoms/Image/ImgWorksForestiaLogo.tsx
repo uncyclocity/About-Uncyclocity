@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksForestiaLogo() {
   const image: Image = {
-    src: "https://media.discordapp.net/attachments/820998088889073685/916208192638308382/logo.png?width=705&height=207",
+    src: "/images/forestiaLogo.png",
     alt: "Forestia_Logo",
   };
 

@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksForestiaScreenShot2() {
   const image: Image = {
-    src: "https://media.discordapp.net/attachments/820998088889073685/916208419738877982/unknown.png",
+    src: "/images/forestiaScreenShot2.png",
     alt: "Forestia_ScreenShot_2",
   };
 

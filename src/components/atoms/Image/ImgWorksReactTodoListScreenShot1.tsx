@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksReactTodoListScreenShot1() {
   const image: Image = {
-    src: "https://media.discordapp.net/attachments/820998088889073685/916230982980497458/unknown.png?width=238&height=325",
+    src: "/images/reactTodoListScreenShot1.png",
     alt: "React-TodoList_ScreenShot_1",
   };
 
