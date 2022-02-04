@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { SlideUp, SlideDown } from "../../../styles/keyframes/slide";
 
@@ -20,12 +20,22 @@ const Styles = styled.div`
 
 export default function CtnSnackBar({
   children,
+  text,
 }: {
   children: React.ReactNode;
+  text: String;
 }) {
   const [leave, setLeave] = useState<boolean>(false);
-  setTimeout(() => {
-    setLeave(true);
-  }, 2000);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+    }
+    timer.current = setTimeout(() => {
+      setLeave(true);
+    }, 2000);
+  }, [text]);
+
   return <Styles leave={leave}>{children}</Styles>;
 }

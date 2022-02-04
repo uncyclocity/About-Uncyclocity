@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useSnackBar() {
   const [viewText, setViewText] = useState<string>("");
-  const timer = useRef<NodeJS.Timeout | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (timer.current) {
