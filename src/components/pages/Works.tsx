@@ -15,7 +15,7 @@ export default function Works() {
       window.open(githubUrl, "_blank");
     },
     gotoWorkLink: () => {
-      const workUrl = "https://forestia.vercel.app";
+      const workUrl = "https://forestia.me";
       window.open(workUrl, "_blank");
     },
   };
