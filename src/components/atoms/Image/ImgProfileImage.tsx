@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgProfileImage() {
   const image: Image = {
-    src: "/images/profilePhoto.jpg",
+    src: "/assets/images/profilePhoto.jpg",
     alt: "프로필 사진",
   };
 

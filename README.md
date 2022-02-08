@@ -3,7 +3,7 @@
 프론트엔드 개발자 이성범을 보다 인상깊게 표현하기 위한 포트폴리오 페이지입니다.<br>
 <a href="https://uncyclocity.tech">이곳</a>에서 직접 사용해보실 수 있습니다.
 
-<img src="./readme-src/aboutuncyclocity.png">
+<img src="./public/assets/readme-src/aboutuncyclocity.png">
 
 ## 📃 개요
 

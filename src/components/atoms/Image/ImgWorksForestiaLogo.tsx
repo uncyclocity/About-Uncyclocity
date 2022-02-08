@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksForestiaLogo() {
   const image: Image = {
-    src: "/images/forestiaLogo.png",
+    src: "/assets/images/forestiaLogo.png",
     alt: "Forestia_Logo",
   };
 

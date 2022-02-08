@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Styles = styled.div`
-  background-image: url("/images/IntroduceProfileCtnImg.png");
+  background-image: url("/assets/images/IntroduceProfileCtnImg.png");
   background-size: 220px;
   background-repeat: no-repeat;
   padding: 7px 15.5px;

@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksReactTodoListLogo() {
   const image: Image = {
-    src: "/images/reactTodoListLogo.png",
+    src: "/assets/images/reactTodoListLogo.png",
     alt: "React-TodoList_Logo",
   };
 

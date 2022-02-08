@@ -5,7 +5,7 @@ type Image = {
 
 export default function ImgWorksReactTodoListScreenShot1() {
   const image: Image = {
-    src: "/images/reactTodoListScreenShot1.png",
+    src: "/assets/images/reactTodoListScreenShot1.png",
     alt: "React-TodoList_ScreenShot_1",
   };
 
