@@ -32,13 +32,13 @@ export default function WorksReactTodoListLinks({
         txtColor="white"
         onClick={workLinks.gotoBackRepo}
       />
-      <BgeBadge
+      {/* <BgeBadge
         icon={<AiOutlineLink />}
         text="사용해보기"
         bgColor="#20c997"
         txtColor="white"
         onClick={workLinks.gotoWorkLink}
-      />
+      /> */}
     </LinksStyle>
   );
 }
